@@ -1,6 +1,8 @@
 ﻿### **7006SCN2627SEPNOV - Machine Learning and Big Data**
 
-### <u>**Student Information**</u>
+### **Student Information**
+
+\- \- \- \- \- \- \- \- \- \-
 
 #### Student Name: Manish Saini
 
@@ -24,7 +26,9 @@
 
 
 
-<u>**Big Data problem**</u>  
+**Big Data problem**  
+
+\- \- \- \- \- \- \- \- \- \-
 
 
 
@@ -32,7 +36,9 @@
 
 
 
-<u>**Task1 - Problem, Data and Pipeline**</u>  
+**Task1 - Problem, Data and Pipeline**  
+
+\- \- \- \- \- \- \- \- \- \-
 
 
 
@@ -40,7 +46,9 @@
 
 
 
-<u>**Task2 - Modelling at Scale**</u>
+**Task2 - Modelling at Scale**
+
+\- \- \- \- \- \- \- \- \- \-
 
 
 
@@ -48,7 +56,9 @@
 
 
 
-<u>**Task3 - Evaluation, Optimisation and Explainability**</u>
+**Task3 - Evaluation, Optimisation and Explainability**
+
+\- \- \- \- \- \- \- \- \- \-
 
 
 
@@ -56,7 +66,9 @@
 
 
 
-<u>**Task4 - Tableau Storytelling and Critical Reflection**</u>
+**Task4 - Tableau Storytelling and Critical Reflection**
+
+\- \- \- \- \- \- \- \- \- \-
 
 
 
