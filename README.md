@@ -10,7 +10,7 @@
 
 #### **Module Leader**: Dr Katerina Stamou
 
-###### **Assessment**: Applied Core Assessment
+### **Assessment**: Applied Core Assessment
 
 #### **Dataset**: NOAA Global Historical Climatology Network — Daily (GHCN-Daily), US stations, mirrored to Hugging Face as CatLikeIceCream/temperature
 
