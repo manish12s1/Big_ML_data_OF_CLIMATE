@@ -10,13 +10,13 @@ pyspark>=3.3.0
 # ==========================================
 # The chosen dataset: Dataset as shown below meets the following criteria:
 ## Dataset Name: NYC TLC Trip Record Data — Yellow Taxi trip records, covering June 2024 to November 2025.
-# Dataset Source: NYC TLC
-# Direct URL: https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page
+## Dataset Source: NYC TLC
+## Direct URL: https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page
 #
 # [✔] 1. 10 million or more rows/entries 
 # [✔] 2. >=10 columns/features 
 # [✔] 3. Suitable for classification/regression/clustering 
 # [✔] 4. Entire pipeline implemented in PySpark (Uses pyspark.ml Pipeline)
-# [✔] 5. Dataset NOT from Kaggle (Note: Kaggle used specifically for this tutor demo per instructions)
+# [✔] 5. Dataset NOT from Kaggle 
 # [✔] 6. Dataset NOT from the ones used during teaching 
 # [✔] 7. Ethical and licensing compliance (Anonymised data, public competition rules)
