@@ -8,11 +8,11 @@ pyspark>=3.3.0
 # ==========================================
 # BIG DATASET REQUIREMENTS (Task 1 Checklist)
 # ==========================================
-# The chosen dataset: Dataset (Dataset from the individual README.md) meets the following criteria:
+# The chosen dataset: Dataset (Dataset Name - Dataset Source - Direct URL) meets the following criteria:
 #
-# [✔] 1. 10 million or more rows/entries (Contains >40M rows)
-# [✔] 2. >=10 columns/features (Contains 24 columns)
-# [✔] 3. Suitable for classification/regression/clustering (Binary Classification)
+# [✔] 1. 10 million or more rows/entries 
+# [✔] 2. >=10 columns/features 
+# [✔] 3. Suitable for classification/regression/clustering 
 # [✔] 4. Entire pipeline implemented in PySpark (Uses pyspark.ml Pipeline)
 # [✔] 5. Dataset NOT from Kaggle (Note: Kaggle used specifically for this tutor demo per instructions)
 # [✔] 6. Dataset NOT from the ones used during teaching 
