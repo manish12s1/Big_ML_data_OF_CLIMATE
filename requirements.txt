@@ -11,7 +11,8 @@ pyspark>=3.3.0
 # The chosen dataset: Dataset as shown below meets the following criteria:
 # Dataset Name: NYC TLC Trip Record Data — Yellow Taxi trip records, covering June 2024 to November 2025.
 # Dataset Source: NYC TLC
-# Direct URL: https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page
+# Direct URL: [NYC TLC Trip Record Data — Yellow Taxi trip records, covering June 2024 to November 2025.](https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page)
+#
 # [✔] 1. 10 million or more rows/entries 
 # [✔] 2. >=10 columns/features 
 # [✔] 3. Suitable for classification/regression/clustering 
