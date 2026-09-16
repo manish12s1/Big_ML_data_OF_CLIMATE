@@ -10,10 +10,10 @@ pyspark>=3.3.0
 # ==========================================
 # The chosen dataset: Dataset (Dataset from the individual README.md) meets the following criteria:
 #
-#  SATISFIED - 1. 10 million or more rows/entries (Contains >40M rows)
-#  SATISFIED - 2. >=10 columns/features (Contains 24 columns)
-#  SATISFIED -  3. Suitable for classification/regression/clustering (Binary Classification)
-#  SATISFIED -  4. Entire pipeline implemented in PySpark (Uses pyspark.ml Pipeline)
-#  SATISFIED -  5. Dataset NOT from Kaggle (Note: Kaggle used specifically for this tutor demo per instructions)
-#  SATISFIED - 6. Dataset NOT from the ones used during teaching 
-#  SATISFIED -  7. Ethical and licensing compliance (Anonymised data, public competition rules)
+# [✔] 1. 10 million or more rows/entries (Contains >40M rows)
+# [✔] 2. >=10 columns/features (Contains 24 columns)
+# [✔]  3. Suitable for classification/regression/clustering (Binary Classification)
+# [✔]  4. Entire pipeline implemented in PySpark (Uses pyspark.ml Pipeline)
+# [✔]  5. Dataset NOT from Kaggle (Note: Kaggle used specifically for this tutor demo per instructions)
+# [✔] 6. Dataset NOT from the ones used during teaching 
+# [✔]  7. Ethical and licensing compliance (Anonymised data, public competition rules)
