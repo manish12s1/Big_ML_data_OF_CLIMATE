@@ -8,7 +8,7 @@ pyspark>=3.3.0
 # ==========================================
 # BIG DATASET REQUIREMENTS (Task 1 Checklist)
 # ==========================================
-# The chosen dataset: Dataset (Dataset Name - Dataset Source - Direct URL) meets the following criteria:
+# The chosen dataset: Dataset NYC TLC Trip Record Data — Yellow Taxi trip records, covering June 2024 to November 2025. - NYC TLC - https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page meets the following criteria:
 #
 # [✔] 1. 10 million or more rows/entries 
 # [✔] 2. >=10 columns/features 
