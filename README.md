@@ -1,4 +1,4 @@
-﻿### **7006SCN2627SEPNOV - Machine Learning and Big Data**
+### **7006SCN2627SEPNOV - Machine Learning and Big Data**
 
 ### **Student Information**
 
@@ -14,11 +14,15 @@
 
 ### **Assessment**: Applied Core Assessment
 
-#### **Dataset**: NOAA Global Historical Climatology Network — Daily (GHCN-Daily), US stations, mirrored to Hugging Face as CatLikeIceCream/temperature
+#### **Dataset**: NOAA Global Historical Climatology Network � Daily (GHCN-Daily), US stations, mirrored to Hugging Face as CatLikeIceCream/temperature
 
 #### **Dataset Source**: Hugging Face
 
 #### **Direct URL**: https://huggingface.co/datasets/CatLikeIceCream/temperature
+
+### Notes / Access Caveats
+
+GHCN-Daily US stations, mirrored to Hugging Face as CatLikeIceCream/temperature. 17.1M rows, 35 columns. Target: temperature or precipitation.
 
 #### **GitHub repository URL**: github.com/7006SCN-2627SEPNOV/sainim10_17142113
 
