@@ -1,0 +1,5 @@
+data/
+lakehouse/
+models/
+tableau_export/
+.ipynb_checkpoints/
