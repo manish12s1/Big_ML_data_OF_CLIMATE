@@ -89,6 +89,7 @@ Define the real-world continuous outcome problem. State explicitly that this is 
   ![Pipeline construction](<figures/Screenshot 2026-10-18 001348.png>) 
    ![EP 1](<figures/Screenshot 2026-10-18 001336-1.png>)
    ![EP1](<figures/Screenshot 2026-10-18 001358.png>) 
+   
 **Task 1 Process Note**
 | Writing bronze Parquet failed on Windows because HADOOP_HOME was unset. I installed winutils.exe and hadoop.dll, set HADOOP_HOME before starting Spark, and the 2.54 GiB CSV is now parsed only once. 
 
