@@ -1,0 +1,100 @@
+{
+  "task": "Task 1 - Problem, Data and Pipeline",
+  "module": {
+    "code": "7006SCN",
+    "title": "Machine Learning and Big Data",
+    "cohort": "7006SCN2627SEPNOV",
+    "module_leader": "Dr Katerina Stamou",
+    "assessment": "Applied Core Assessment"
+  },
+  "student": {
+    "student_name": "Manish Saini",
+    "student_email": "sainim10@coventry.ac.uk",
+    "sid": "17142113",
+    "pool_reference": "112"
+  },
+  "dataset": {
+    "name": "climate.csv - GHCN-Daily US weather-station records (1970-2023)",
+    "source_platform": "Hugging Face",
+    "source_url": "https://huggingface.co/datasets/CatLikeIceCream/temperature",
+    "original_source": "NOAA NCEI Global Historical Climatology Network - Daily (GHCN-Daily); Menne et al. (2012), J. Atmos. Oceanic Technol. 29, 897-910",
+    "licence": "None declared on the Hugging Face mirror; original NOAA GHCN-Daily is US-Government public-domain data (citation of Menne et al. 2012 requested)",
+    "access": "Free - no registration (as recorded in the Dataset Catalogue)",
+    "rows": 17097453,
+    "columns": 35,
+    "file_size_bytes": 2730667293,
+    "file_size_gib": 2.543,
+    "coverage": {
+      "spatial": "United States weather stations",
+      "temporal": "1970-2023"
+    },
+    "element_codes": 132
+  },
+  "big_data_requirements": {
+    "rows_ge_10M": true,
+    "cols_ge_10": true,
+    "size_ge_1GiB": true,
+    "not_kaggle": true,
+    "pipeline_in_pyspark": true,
+    "not_a_teaching_dataset": true
+  },
+  "problem": {
+    "type": "regression",
+    "target": "label_TMAX_next",
+    "target_meaning": "next-day maximum temperature at the same station (deg C)",
+    "train_years": "1970-2015",
+    "test_years": "2016-2023"
+  },
+  "environment": {
+    "run_location": "local Jupyter on Windows 11 laptop (16 GB RAM)",
+    "spark_version": "4.2.0",
+    "master": "local[*]",
+    "default_parallelism": 12,
+    "driver_memory": "4g",
+    "shuffle_partitions": 32,
+    "spark_local_dir": "E:/spark-tmp",
+    "ansi_enabled": "true",
+    "note": "Driver memory lowered from 6g to 4g and temp files moved to E: after Java out-of-memory crashes"
+  },
+  "pipeline": {
+    "stages": [
+      "ImputerModel",
+      "StringIndexerModel",
+      "OneHotEncoderModel",
+      "VectorAssembler",
+      "StandardScalerModel"
+    ],
+    "stage_count": 5
+  },
+  "repository": {
+    "name": "sainim10_17142113",
+    "url": "https://github.coventry.ac.uk/7006SCN-2627SEPNOV/sainim10_17142113",
+    "visibility": "private",
+    "branch": "main"
+  },
+  "artefacts": {
+    "notebook": "notebooks/task1.ipynb",
+    "results": [
+      "results/task1.json",
+      "results/task1_results.json"
+    ],
+    "figures": [
+      "figures/T1_1_completeness.png"
+    ],
+    "handoff_for_task2": [
+      "lakehouse/handoff/train",
+      "lakehouse/handoff/test",
+      "models/task1_preprocessing"
+    ],
+    "not_in_git": "data/, lakehouse/ and models/ are excluded by .gitignore (too large); they are rebuilt by the notebook"
+  },
+  "provenance": "All values are copied from the outputs of notebooks/task1.ipynb (run of 17 Oct 2026) and results/task1.json. No values were estimated or invented.",
+  "last_updated": "2026-10-18",
+  "sampling": {
+    "station_sample_pct": 5,
+    "method": "crc32(ID) % 100 < 5 - repeatable, whole stations kept",
+    "station_day_rows": 2989300,
+    "train_rows_1970_2015": 2555512,
+    "test_rows_2016_2023": 433788
+  }
+}
