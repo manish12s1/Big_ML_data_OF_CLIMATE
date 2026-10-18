@@ -1,8 +1,10 @@
 # ==========================================
 # PYTHON DEPENDENCIES
 # ==========================================
-# Only PySpark is expected for this pipeline
-pyspark>=3.3.0
+pyspark>=3.3.0          # whole Task 1 pipeline (tested with 4.2.0)
+huggingface_hub         # downloads climate.csv from Hugging Face
+matplotlib              # Fig. T1.1 missing-value chart
+pandas<3                # small tables only (Table T1.1); PySpark warns with pandas 3
 
 
 # ==========================================
@@ -19,4 +21,4 @@ pyspark>=3.3.0
 # [✔] 4. Entire pipeline implemented in PySpark (Uses pyspark.ml Pipeline)
 # [✔] 5. Dataset NOT from Kaggle 
 # [✔] 6. Dataset NOT from the ones used during teaching 
-# [✔] 7. Ethical and licensing compliance (Anonymised data, public competition rules)
+# [✔] 7. Ethical and licensing compliance (no personal data - weather stations only; NOAA GHCN-Daily is US-Government public-domain data, cite Menne et al. 2012)

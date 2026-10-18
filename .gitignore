@@ -1,5 +1,39 @@
+# ==============================================================================
+# 7006SCN - files that must never enter the repository
+# ==============================================================================
+
+# Raw and derived data (climate.csv is 2.54 GiB; the lakehouse is ~1.4 GB)
 data/
 lakehouse/
+*.parquet
+*.csv
+
+# Fitted models and Tableau/CSV exports (rebuilt by the notebooks)
 models/
+exports/
 tableau_export/
+
+# Notebook and Python scratch
 .ipynb_checkpoints/
+__pycache__/
+*.pyc
+.DS_Store
+
+# Spark local scratch
+spark-warehouse/
+metastore_db/
+derby.log
+
+# Java crash reports from Spark out-of-memory errors
+hs_err_pid*.log
+replay_pid*.log
+
+# Local tools and backups (not assignment work)
+anaconda_projects/
+*_backup_*.ipynb
+_git_*.ipynb
+notebooks/results/
+notebooks/figures/
+
+# Folder for Java crash reports
+logs/
