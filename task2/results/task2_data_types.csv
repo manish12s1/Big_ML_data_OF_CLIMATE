@@ -1,0 +1,20 @@
+column,role,expected,train,test,ok
+ID,row key,string,string,string,True
+date,row key,date,date,date,True
+YEAR,row key,int,int,int,True
+state_code,categorical feature,string,string,string,True
+TMAX,numeric feature,double,double,double,True
+TMIN,numeric feature,double,double,double,True
+TOBS,numeric feature,double,double,double,True
+PRCP,numeric feature,double,double,double,True
+SNOW,numeric feature,double,double,double,True
+SNWD,numeric feature,double,double,double,True
+TMAX_lag1,numeric feature,double,double,double,True
+TMAX_lag2,numeric feature,double,double,double,True
+TMAX_roll7,numeric feature,double,double,double,True
+TMIN_roll7,numeric feature,double,double,double,True
+DTR,numeric feature,double,double,double,True
+doy_sin,numeric feature,double,double,double,True
+doy_cos,numeric feature,double,double,double,True
+YEAR_f,numeric feature,double,double,double,True
+label_TMAX_next,target,double,double,double,True

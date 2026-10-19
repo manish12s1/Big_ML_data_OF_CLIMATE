@@ -1,0 +1,85 @@
+{
+  "model": "LinearRegression",
+  "family": "Linear",
+  "cv_metric": "rmse",
+  "cv_folds": 3,
+  "fold_rule": "blocks of consecutive years (foldCol)",
+  "combinations": 7,
+  "searched": {
+    "regParam": [
+      0.0,
+      0.01,
+      0.1
+    ],
+    "elasticNetParam": [
+      0.0,
+      0.5,
+      1.0
+    ]
+  },
+  "tuning_rows": 255855,
+  "cv_grid": [
+    {
+      "regParam": 0.0,
+      "elasticNetParam": 0.0,
+      "mean_cv_rmse": 3.9089816548333727,
+      "std_cv_rmse": 0.05738895844717022,
+      "rank": 1
+    },
+    {
+      "regParam": 0.01,
+      "elasticNetParam": 0.0,
+      "mean_cv_rmse": 3.90950071495372,
+      "std_cv_rmse": 0.05657487036754912,
+      "rank": 2
+    },
+    {
+      "regParam": 0.01,
+      "elasticNetParam": 0.5,
+      "mean_cv_rmse": 3.91197362951325,
+      "std_cv_rmse": 0.056177452003668374,
+      "rank": 3
+    },
+    {
+      "regParam": 0.01,
+      "elasticNetParam": 1.0,
+      "mean_cv_rmse": 3.9126679928914374,
+      "std_cv_rmse": 0.05697650971556395,
+      "rank": 4
+    },
+    {
+      "regParam": 0.1,
+      "elasticNetParam": 0.0,
+      "mean_cv_rmse": 3.9152951813455936,
+      "std_cv_rmse": 0.05517404432481055,
+      "rank": 5
+    },
+    {
+      "regParam": 0.1,
+      "elasticNetParam": 0.5,
+      "mean_cv_rmse": 3.941851725256201,
+      "std_cv_rmse": 0.05435481631048207,
+      "rank": 6
+    },
+    {
+      "regParam": 0.1,
+      "elasticNetParam": 1.0,
+      "mean_cv_rmse": 3.9521161913519847,
+      "std_cv_rmse": 0.056872556108297986,
+      "rank": 7
+    }
+  ],
+  "best_params": {
+    "regParam": 0.0,
+    "elasticNetParam": 0.0
+  },
+  "best_cv_rmse": 3.9089816548333727,
+  "best_cv_rmse_std": 0.05738895844717022,
+  "tuning_time_s": 160.98,
+  "final_fit_rows": 2555512,
+  "final_fit_time_s": 49.02,
+  "model_path": "models/task2/LinearRegression",
+  "executor": "local[*], 12 cores, driver 4g, 32 shuffle partitions, CV parallelism 2",
+  "quick_test": false,
+  "saved_at": "2026-10-18 19:09:16"
+}

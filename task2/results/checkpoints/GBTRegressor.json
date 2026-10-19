@@ -1,0 +1,62 @@
+{
+  "model": "GBTRegressor",
+  "family": "Free choice: tree-based boosting",
+  "cv_metric": "rmse",
+  "cv_folds": 3,
+  "fold_rule": "blocks of consecutive years (foldCol)",
+  "combinations": 4,
+  "searched": {
+    "maxDepth": [
+      3,
+      5
+    ],
+    "maxIter": [
+      30,
+      60
+    ]
+  },
+  "tuning_rows": 255855,
+  "cv_grid": [
+    {
+      "maxDepth": 3,
+      "maxIter": 30,
+      "mean_cv_rmse": 4.04171984379773,
+      "std_cv_rmse": 0.03839425734333936,
+      "rank": 4
+    },
+    {
+      "maxDepth": 3,
+      "maxIter": 60,
+      "mean_cv_rmse": 3.8982602645204794,
+      "std_cv_rmse": 0.03947928612601336,
+      "rank": 3
+    },
+    {
+      "maxDepth": 5,
+      "maxIter": 30,
+      "mean_cv_rmse": 3.89542370750771,
+      "std_cv_rmse": 0.03798673457287835,
+      "rank": 2
+    },
+    {
+      "maxDepth": 5,
+      "maxIter": 60,
+      "mean_cv_rmse": 3.823724486079398,
+      "std_cv_rmse": 0.03489529069136297,
+      "rank": 1
+    }
+  ],
+  "best_params": {
+    "maxDepth": 5,
+    "maxIter": 60
+  },
+  "best_cv_rmse": 3.823724486079398,
+  "best_cv_rmse_std": 0.03489529069136297,
+  "tuning_time_s": 1100.12,
+  "final_fit_rows": 2555512,
+  "final_fit_time_s": 661.76,
+  "model_path": "models/task2/GBTRegressor",
+  "executor": "local[*], 12 cores, driver 4g, 32 shuffle partitions, CV parallelism 2",
+  "quick_test": false,
+  "saved_at": "2026-10-19 18:05:51"
+}

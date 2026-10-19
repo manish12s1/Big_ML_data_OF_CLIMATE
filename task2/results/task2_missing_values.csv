@@ -1,0 +1,17 @@
+column,train_missing_pct,test_missing_pct,treatment
+TOBS,21.771,25.966,median imputation (Imputer fitted on training rows only)
+SNWD,11.74,23.252,median imputation (Imputer fitted on training rows only)
+SNOW,9.253,22.112,median imputation (Imputer fitted on training rows only)
+TMAX_lag2,1.707,2.215,median imputation (Imputer fitted on training rows only)
+PRCP,1.085,1.564,median imputation (Imputer fitted on training rows only)
+TMAX_lag1,0.886,1.16,median imputation (Imputer fitted on training rows only)
+DTR,0.272,0.289,median imputation (Imputer fitted on training rows only)
+TMIN,0.272,0.289,median imputation (Imputer fitted on training rows only)
+TMIN_roll7,0.042,0.06,median imputation (Imputer fitted on training rows only)
+state_code,0.0,0.0,StringIndexer handleInvalid='keep'
+TMAX,0.0,0.0,median imputation (Imputer fitted on training rows only)
+TMAX_roll7,0.0,0.0,median imputation (Imputer fitted on training rows only)
+doy_sin,0.0,0.0,median imputation (Imputer fitted on training rows only)
+doy_cos,0.0,0.0,median imputation (Imputer fitted on training rows only)
+YEAR_f,0.0,0.0,median imputation (Imputer fitted on training rows only)
+label_TMAX_next,0.0,0.0,rows without a target are dropped

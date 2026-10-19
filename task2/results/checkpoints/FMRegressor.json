@@ -1,0 +1,62 @@
+{
+  "model": "FMRegressor",
+  "family": "Distance / kernel / neural (factorisation machine)",
+  "cv_metric": "rmse",
+  "cv_folds": 3,
+  "fold_rule": "blocks of consecutive years (foldCol)",
+  "combinations": 4,
+  "searched": {
+    "factorSize": [
+      4,
+      8
+    ],
+    "maxIter": [
+      50,
+      100
+    ]
+  },
+  "tuning_rows": 255855,
+  "cv_grid": [
+    {
+      "factorSize": 4,
+      "maxIter": 50,
+      "mean_cv_rmse": 4.377680134374352,
+      "std_cv_rmse": 0.05868083987213258,
+      "rank": 4
+    },
+    {
+      "factorSize": 4,
+      "maxIter": 100,
+      "mean_cv_rmse": 4.047256613508277,
+      "std_cv_rmse": 0.06553803835086204,
+      "rank": 2
+    },
+    {
+      "factorSize": 8,
+      "maxIter": 50,
+      "mean_cv_rmse": 4.363755493696451,
+      "std_cv_rmse": 0.07168510772863464,
+      "rank": 3
+    },
+    {
+      "factorSize": 8,
+      "maxIter": 100,
+      "mean_cv_rmse": 4.012747460424186,
+      "std_cv_rmse": 0.04766123041236456,
+      "rank": 1
+    }
+  ],
+  "best_params": {
+    "factorSize": 8,
+    "maxIter": 100
+  },
+  "best_cv_rmse": 4.012747460424186,
+  "best_cv_rmse_std": 0.04766123041236456,
+  "tuning_time_s": 719.72,
+  "final_fit_rows": 2555512,
+  "final_fit_time_s": 1082.62,
+  "model_path": "models/task2/FMRegressor",
+  "executor": "local[*], 12 cores, driver 4g, 32 shuffle partitions, CV parallelism 2",
+  "quick_test": false,
+  "saved_at": "2026-10-19 17:34:19"
+}

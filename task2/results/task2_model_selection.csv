@@ -1,0 +1,5 @@
+model,family,reason,grid,combinations,cv_folds,fits
+LinearRegression,Linear,"r = 0.93 between today's and tomorrow's TMAX, so most of the signal is linear; cheapest, interpretable baseline the other models must beat","regParam [0.0, 0.01, 0.1]; elasticNetParam [0.0, 0.5, 1.0]",7,3,21
+RandomForestRegressor,Tree-based ensemble (bagging),learns season x snow x state thresholds without a set form; trees train in parallel and need no scaling for skewed PRCP/SNOW,"numTrees [20, 50]; maxDepth [8, 12]",4,3,12
+FMRegressor,Distance / kernel / neural (factorisation machine),factorised degree-2 polynomial kernel: models all pairwise interactions (state x season) at a cost linear in the 54 sparse inputs,"factorSize [4, 8]; maxIter [50, 100]",4,3,12
+GBTRegressor,Free choice: tree-based boosting,"each tree corrects the previous trees' errors, targeting the days persistence gets wrong; sequential, so it tests accuracy against compute cost","maxDepth [3, 5]; maxIter [30, 60]",4,3,12
