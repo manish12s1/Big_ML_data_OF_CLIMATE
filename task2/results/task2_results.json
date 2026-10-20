@@ -1,0 +1,629 @@
+{
+  "task": 2,
+  "notebook": "task2/task2.ipynb",
+  "quick_test": false,
+  "student": {
+    "student_name": "Manish saini",
+    "student_email": "sainim10@coventry.ac.uk",
+    "sid": "17142113"
+  },
+  "pool_reference": "112",
+  "problem_type": "regression",
+  "target_col": "label_TMAX_next",
+  "target_meaning": "next-day maximum temperature at the same station (deg C)",
+  "input_contract": "results/task1.json#handoff",
+  "rows": {
+    "train": 2555512,
+    "test": 433788,
+    "cv_tuning_sample": 255855
+  },
+  "features": {
+    "numeric": [
+      "TMAX",
+      "TMIN",
+      "TOBS",
+      "PRCP",
+      "SNOW",
+      "SNWD",
+      "TMAX_lag1",
+      "TMAX_lag2",
+      "TMAX_roll7",
+      "TMIN_roll7",
+      "DTR",
+      "doy_sin",
+      "doy_cos",
+      "YEAR_f"
+    ],
+    "categorical": [
+      "state_code"
+    ],
+    "vector_size": 54
+  },
+  "validation_checks": [
+    {
+      "check": "Row counts match Task 1",
+      "passed": true,
+      "detail": "train 2,555,512 (Task 1: 2,555,512), test 433,788 (Task 1: 433,788)"
+    },
+    {
+      "check": "Training years end before test years start",
+      "passed": true,
+      "detail": "train 1970-2015, test 2016-2023"
+    },
+    {
+      "check": "No duplicate station-days (train)",
+      "passed": true,
+      "detail": "0 duplicate (ID, date) rows"
+    },
+    {
+      "check": "No duplicate station-days (test)",
+      "passed": true,
+      "detail": "0 duplicate (ID, date) rows"
+    },
+    {
+      "check": "Target has no missing values",
+      "passed": true,
+      "detail": "0 missing"
+    },
+    {
+      "check": "Target inside Task 1's valid range (-60 to 60 deg C)",
+      "passed": true,
+      "detail": "min -53.9, max 50.0 deg C"
+    },
+    {
+      "check": "No target or future column among the features",
+      "passed": true,
+      "detail": "15 feature columns checked"
+    },
+    {
+      "check": "Unseen categories in test are handled",
+      "passed": true,
+      "detail": "40 state_code values in train, 38 in test, 0 unseen (StringIndexer handleInvalid='keep')"
+    }
+  ],
+  "preprocessing_check": {
+    "stages": [
+      "ImputerModel",
+      "StringIndexerModel",
+      "OneHotEncoderModel",
+      "VectorAssembler",
+      "StandardScalerModel"
+    ],
+    "feature_vector_size": 54,
+    "task1_feature_vector_size": 54,
+    "max_median_difference": 0.015051900466503903,
+    "max_scaler_std_difference": 1.8669510382096632e-12,
+    "same_state_index": true,
+    "fit_time_s": 34.54
+  },
+  "target_profile": {
+    "train": {
+      "rows": 2555512,
+      "mean": 17.274015265825106,
+      "sd": 11.950217277471921,
+      "min": -53.9,
+      "p01": -12.2,
+      "median": 18.9,
+      "p99": 37.8,
+      "max": 50.0,
+      "skew": -0.4657616051890553
+    },
+    "test": {
+      "rows": 433788,
+      "mean": 17.93164379835311,
+      "sd": 11.931401114596364,
+      "min": -47.8,
+      "p01": -11.7,
+      "median": 19.4,
+      "p99": 38.3,
+      "max": 47.8,
+      "skew": -0.47771116637447747
+    }
+  },
+  "settings": {
+    "seed": 42,
+    "tune_pct": 10,
+    "final_train_pct": 100,
+    "cv_folds": 3,
+    "fold_rule": "blocks of consecutive years",
+    "folds": [
+      {
+        "fold": 0,
+        "first_year": 1970,
+        "last_year": 1985,
+        "rows": 87683
+      },
+      {
+        "fold": 1,
+        "first_year": 1986,
+        "last_year": 2001,
+        "rows": 88056
+      },
+      {
+        "fold": 2,
+        "first_year": 2002,
+        "last_year": 2015,
+        "rows": 80116
+      }
+    ],
+    "cv_parallelism": 2,
+    "inference_repeats": 3
+  },
+  "executor_config": {
+    "spark_version": "4.2.0",
+    "master": "local[*]",
+    "cores (default parallelism)": 12,
+    "driver_memory": "4g",
+    "executor": "local mode - the driver JVM is also the executor",
+    "shuffle_partitions": "32",
+    "cv_parallelism": 2,
+    "os": "Windows-11-10.0.26300-SP0",
+    "python": "3.14.6"
+  },
+  "n_algorithms": 4,
+  "families": [
+    "Distance / kernel / neural (factorisation machine)",
+    "Free choice: tree-based boosting",
+    "Linear",
+    "Tree-based ensemble (bagging)"
+  ],
+  "n_families": 4,
+  "models": {
+    "LinearRegression": {
+      "model": "LinearRegression",
+      "family": "Linear",
+      "cv_metric": "rmse",
+      "cv_folds": 3,
+      "fold_rule": "blocks of consecutive years (foldCol)",
+      "combinations": 7,
+      "searched": {
+        "regParam": [
+          0.0,
+          0.01,
+          0.1
+        ],
+        "elasticNetParam": [
+          0.0,
+          0.5,
+          1.0
+        ]
+      },
+      "tuning_rows": 255855,
+      "best_params": {
+        "regParam": 0.0,
+        "elasticNetParam": 0.0
+      },
+      "best_cv_rmse": 3.9089816548333727,
+      "best_cv_rmse_std": 0.05738895844717022,
+      "tuning_time_s": 160.98,
+      "final_fit_rows": 2555512,
+      "final_fit_time_s": 49.02,
+      "model_path": "models/task2/LinearRegression",
+      "executor": "local[*], 12 cores, driver 4g, 32 shuffle partitions, CV parallelism 2",
+      "quick_test": false,
+      "saved_at": "2026-10-18 19:09:16",
+      "reason": "r = 0.93 between today's and tomorrow's TMAX, so most of the signal is linear; cheapest, interpretable baseline the other models must beat",
+      "cv_grid": [
+        {
+          "regParam": 0.0,
+          "elasticNetParam": 0.0,
+          "mean_cv_rmse": 3.9089816548333727,
+          "std_cv_rmse": 0.05738895844717022,
+          "rank": 1
+        },
+        {
+          "regParam": 0.01,
+          "elasticNetParam": 0.0,
+          "mean_cv_rmse": 3.90950071495372,
+          "std_cv_rmse": 0.05657487036754912,
+          "rank": 2
+        },
+        {
+          "regParam": 0.01,
+          "elasticNetParam": 0.5,
+          "mean_cv_rmse": 3.91197362951325,
+          "std_cv_rmse": 0.056177452003668374,
+          "rank": 3
+        },
+        {
+          "regParam": 0.01,
+          "elasticNetParam": 1.0,
+          "mean_cv_rmse": 3.9126679928914374,
+          "std_cv_rmse": 0.05697650971556395,
+          "rank": 4
+        },
+        {
+          "regParam": 0.1,
+          "elasticNetParam": 0.0,
+          "mean_cv_rmse": 3.9152951813455936,
+          "std_cv_rmse": 0.05517404432481055,
+          "rank": 5
+        },
+        {
+          "regParam": 0.1,
+          "elasticNetParam": 0.5,
+          "mean_cv_rmse": 3.941851725256201,
+          "std_cv_rmse": 0.05435481631048207,
+          "rank": 6
+        },
+        {
+          "regParam": 0.1,
+          "elasticNetParam": 1.0,
+          "mean_cv_rmse": 3.9521161913519847,
+          "std_cv_rmse": 0.056872556108297986,
+          "rank": 7
+        }
+      ],
+      "test_metrics": {
+        "RMSE": 3.974047830500779,
+        "MAE": 2.9916851982695603,
+        "MSE": 15.793056159107948,
+        "R2": 0.8890609893864873,
+        "Adjusted_R2": 0.8890471774178956,
+        "Explained_Variance": 0.8890618679026988,
+        "Max_Abs_Error": 29.100606747508813,
+        "Bias": -0.011183193399408943,
+        "Within_3C_pct": 60.90025542430865,
+        "P95_Abs_Error": 8.147373605229234,
+        "Bias_hot": 1.6388462837014957,
+        "Hot_days": 45870,
+        "Bias_cold": -3.2560435863548305,
+        "Cold_days": 37037,
+        "Rows": 433788,
+        "Inference_time_s": 2.081721700000344,
+        "Inference_runs_s": [
+          3.976,
+          2.082,
+          1.96
+        ],
+        "Rows_per_s": 208379.4389999049
+      },
+      "trend_fit": {
+        "slope": 0.8814509899711496,
+        "intercept": 2.1249164483330287
+      },
+      "grid_edge": []
+    },
+    "RandomForestRegressor": {
+      "model": "RandomForestRegressor",
+      "family": "Tree-based ensemble (bagging)",
+      "cv_metric": "rmse",
+      "cv_folds": 3,
+      "fold_rule": "blocks of consecutive years (foldCol)",
+      "combinations": 4,
+      "searched": {
+        "numTrees": [
+          20,
+          50
+        ],
+        "maxDepth": [
+          8,
+          12
+        ]
+      },
+      "tuning_rows": 255855,
+      "best_params": {
+        "numTrees": 50,
+        "maxDepth": 12
+      },
+      "best_cv_rmse": 3.7760690047930137,
+      "best_cv_rmse_std": 0.039938662570765365,
+      "tuning_time_s": 716.59,
+      "final_fit_rows": 2555512,
+      "final_fit_time_s": 655.1,
+      "model_path": "models/task2/RandomForestRegressor",
+      "executor": "local[*], 12 cores, driver 4g, 32 shuffle partitions, CV parallelism 2",
+      "quick_test": false,
+      "saved_at": "2026-10-19 15:37:45",
+      "reason": "learns season x snow x state thresholds without a set form; trees train in parallel and need no scaling for skewed PRCP/SNOW",
+      "cv_grid": [
+        {
+          "numTrees": 20,
+          "maxDepth": 8,
+          "mean_cv_rmse": 3.8985367137445546,
+          "std_cv_rmse": 0.043228160909891414,
+          "rank": 4
+        },
+        {
+          "numTrees": 20,
+          "maxDepth": 12,
+          "mean_cv_rmse": 3.7896345780859058,
+          "std_cv_rmse": 0.0396104876557299,
+          "rank": 2
+        },
+        {
+          "numTrees": 50,
+          "maxDepth": 8,
+          "mean_cv_rmse": 3.888057767018266,
+          "std_cv_rmse": 0.041459977636808226,
+          "rank": 3
+        },
+        {
+          "numTrees": 50,
+          "maxDepth": 12,
+          "mean_cv_rmse": 3.7760690047930137,
+          "std_cv_rmse": 0.039938662570765365,
+          "rank": 1
+        }
+      ],
+      "test_metrics": {
+        "RMSE": 3.792422492516551,
+        "MAE": 2.8602383594571736,
+        "MSE": 14.382468361745447,
+        "R2": 0.8989697247855343,
+        "Adjusted_R2": 0.898957146460017,
+        "Explained_Variance": 0.899139235652316,
+        "Max_Abs_Error": 30.097045722553588,
+        "Bias": 0.1553422953229326,
+        "Within_3C_pct": 62.876796960727354,
+        "P95_Abs_Error": 7.74691938015998,
+        "Bias_hot": 1.8605491598694366,
+        "Hot_days": 45870,
+        "Bias_cold": -2.779268877956785,
+        "Cold_days": 37037,
+        "Rows": 433788,
+        "Inference_time_s": 10.710013700008858,
+        "Inference_runs_s": [
+          11.986,
+          10.71,
+          9.47
+        ],
+        "Rows_per_s": 40503.02942186164
+      },
+      "trend_fit": {
+        "slope": 0.8860011953930005,
+        "intercept": 1.8422012684571922
+      },
+      "grid_edge": [
+        "numTrees",
+        "maxDepth"
+      ]
+    },
+    "FMRegressor": {
+      "model": "FMRegressor",
+      "family": "Distance / kernel / neural (factorisation machine)",
+      "cv_metric": "rmse",
+      "cv_folds": 3,
+      "fold_rule": "blocks of consecutive years (foldCol)",
+      "combinations": 4,
+      "searched": {
+        "factorSize": [
+          4,
+          8
+        ],
+        "maxIter": [
+          50,
+          100
+        ]
+      },
+      "tuning_rows": 255855,
+      "best_params": {
+        "factorSize": 8,
+        "maxIter": 100
+      },
+      "best_cv_rmse": 4.012747460424186,
+      "best_cv_rmse_std": 0.04766123041236456,
+      "tuning_time_s": 719.72,
+      "final_fit_rows": 2555512,
+      "final_fit_time_s": 1082.62,
+      "model_path": "models/task2/FMRegressor",
+      "executor": "local[*], 12 cores, driver 4g, 32 shuffle partitions, CV parallelism 2",
+      "quick_test": false,
+      "saved_at": "2026-10-19 17:34:19",
+      "reason": "factorised degree-2 polynomial kernel: models all pairwise interactions (state x season) at a cost linear in the 54 sparse inputs",
+      "cv_grid": [
+        {
+          "factorSize": 4,
+          "maxIter": 50,
+          "mean_cv_rmse": 4.377680134374352,
+          "std_cv_rmse": 0.05868083987213258,
+          "rank": 4
+        },
+        {
+          "factorSize": 4,
+          "maxIter": 100,
+          "mean_cv_rmse": 4.047256613508277,
+          "std_cv_rmse": 0.06553803835086204,
+          "rank": 2
+        },
+        {
+          "factorSize": 8,
+          "maxIter": 50,
+          "mean_cv_rmse": 4.363755493696451,
+          "std_cv_rmse": 0.07168510772863464,
+          "rank": 3
+        },
+        {
+          "factorSize": 8,
+          "maxIter": 100,
+          "mean_cv_rmse": 4.012747460424186,
+          "std_cv_rmse": 0.04766123041236456,
+          "rank": 1
+        }
+      ],
+      "test_metrics": {
+        "RMSE": 4.082213746186218,
+        "MAE": 3.103953769827109,
+        "MSE": 16.664469069551714,
+        "R2": 0.8829397114560773,
+        "Adjusted_R2": 0.8829251373849751,
+        "Explained_Variance": 0.882940591392628,
+        "Max_Abs_Error": 31.68433057138855,
+        "Bias": 0.011192229955209755,
+        "Within_3C_pct": 58.78631958468192,
+        "P95_Abs_Error": 8.30788374139374,
+        "Bias_hot": 1.3057011616906289,
+        "Hot_days": 45870,
+        "Bias_cold": -3.7054896580762575,
+        "Cold_days": 37037,
+        "Rows": 433788,
+        "Inference_time_s": 3.048085300004459,
+        "Inference_runs_s": [
+          3.096,
+          3.048,
+          2.982
+        ],
+        "Rows_per_s": 142314.91487438537
+      },
+      "trend_fit": {
+        "slope": 0.8802305792447965,
+        "intercept": 2.115720662346732
+      },
+      "grid_edge": [
+        "factorSize",
+        "maxIter"
+      ]
+    },
+    "GBTRegressor": {
+      "model": "GBTRegressor",
+      "family": "Free choice: tree-based boosting",
+      "cv_metric": "rmse",
+      "cv_folds": 3,
+      "fold_rule": "blocks of consecutive years (foldCol)",
+      "combinations": 4,
+      "searched": {
+        "maxDepth": [
+          3,
+          5
+        ],
+        "maxIter": [
+          30,
+          60
+        ]
+      },
+      "tuning_rows": 255855,
+      "best_params": {
+        "maxDepth": 5,
+        "maxIter": 60
+      },
+      "best_cv_rmse": 3.823724486079398,
+      "best_cv_rmse_std": 0.03489529069136297,
+      "tuning_time_s": 1100.12,
+      "final_fit_rows": 2555512,
+      "final_fit_time_s": 661.76,
+      "model_path": "models/task2/GBTRegressor",
+      "executor": "local[*], 12 cores, driver 4g, 32 shuffle partitions, CV parallelism 2",
+      "quick_test": false,
+      "saved_at": "2026-10-19 18:05:51",
+      "reason": "each tree corrects the previous trees' errors, targeting the days persistence gets wrong; sequential, so it tests accuracy against compute cost",
+      "cv_grid": [
+        {
+          "maxDepth": 3,
+          "maxIter": 30,
+          "mean_cv_rmse": 4.04171984379773,
+          "std_cv_rmse": 0.03839425734333936,
+          "rank": 4
+        },
+        {
+          "maxDepth": 3,
+          "maxIter": 60,
+          "mean_cv_rmse": 3.8982602645204794,
+          "std_cv_rmse": 0.03947928612601336,
+          "rank": 3
+        },
+        {
+          "maxDepth": 5,
+          "maxIter": 30,
+          "mean_cv_rmse": 3.89542370750771,
+          "std_cv_rmse": 0.03798673457287835,
+          "rank": 2
+        },
+        {
+          "maxDepth": 5,
+          "maxIter": 60,
+          "mean_cv_rmse": 3.823724486079398,
+          "std_cv_rmse": 0.03489529069136297,
+          "rank": 1
+        }
+      ],
+      "test_metrics": {
+        "RMSE": 3.8528997428946354,
+        "MAE": 2.910010488336097,
+        "MSE": 14.84483642879755,
+        "R2": 0.895721800167191,
+        "Adjusted_R2": 0.8957088174732504,
+        "Explained_Variance": 0.8957719257811323,
+        "Max_Abs_Error": 29.043376363612452,
+        "Bias": 0.08447356017741757,
+        "Within_3C_pct": 62.03421948048356,
+        "P95_Abs_Error": 7.857736506489857,
+        "Bias_hot": 1.6819226029729337,
+        "Hot_days": 45870,
+        "Bias_cold": -2.706305872578585,
+        "Cold_days": 37037,
+        "Rows": 433788,
+        "Inference_time_s": 3.151528000002145,
+        "Inference_runs_s": [
+          4.721,
+          2.886,
+          3.152
+        ],
+        "Rows_per_s": 137643.70806786575
+      },
+      "trend_fit": {
+        "slope": 0.8926682375473317,
+        "intercept": 1.7756801476958681
+      },
+      "grid_edge": [
+        "maxDepth",
+        "maxIter"
+      ]
+    }
+  },
+  "baseline": {
+    "model": "Persistence (tomorrow = today)",
+    "RMSE": 4.397445067524218,
+    "MAE": 3.151519636320321,
+    "MSE": 19.33752312189307,
+    "R2": 0.8641627268816147,
+    "Adjusted_R2": 0.864162413738099,
+    "Explained_Variance": 0.8641629424069253,
+    "Max_Abs_Error": 33.3,
+    "Bias": 0.005539111270943457,
+    "Within_3C_pct": 61.24696856528996,
+    "P95_Abs_Error": 9.399999999999999,
+    "Bias_hot": 0.8917266187050317,
+    "Hot_days": 45870,
+    "Bias_cold": -2.0165888165888153,
+    "Cold_days": 37037,
+    "Rows": 433788
+  },
+  "recommendation": {
+    "rule": "lowest test RMSE; models within 2% of the best are tied; ties go to the lowest final fit + inference time; must beat the persistence baseline",
+    "rmse_ranking": [
+      "RandomForestRegressor",
+      "GBTRegressor",
+      "LinearRegression",
+      "FMRegressor"
+    ],
+    "mae_ranking": [
+      "RandomForestRegressor",
+      "GBTRegressor",
+      "LinearRegression",
+      "FMRegressor"
+    ],
+    "rankings_agree": true,
+    "tied_within_2pct": [
+      "RandomForestRegressor",
+      "GBTRegressor"
+    ],
+    "compute_s": {
+      "LinearRegression": 51.1,
+      "RandomForestRegressor": 665.81,
+      "FMRegressor": 1085.67,
+      "GBTRegressor": 664.91
+    },
+    "recommended_model": "GBTRegressor"
+  },
+  "outputs": [
+    "task2/figures/task2_actual_vs_predicted.png",
+    "task2/results/task2_cv_results.csv",
+    "task2/results/task2_data_types.csv",
+    "task2/results/task2_missing_values.csv",
+    "task2/results/task2_model_comparison.csv",
+    "task2/results/task2_model_selection.csv",
+    "task2/results/task2_plot_sample_predictions.csv",
+    "task2/results/task2_tuning_summary.csv",
+    "task2/results/task2_validation_checks.csv"
+  ]
+}

@@ -1,0 +1,6 @@
+Model,Family,RMSE (deg C),MAE (deg C),MSE (deg C^2),R2,Adjusted R2,Explained variance,Max abs error (deg C),Bias (deg C),Within 3 deg C (%),Inference time (s),Rows per second,RMSE vs persistence (%)
+LinearRegression,Linear,3.974,2.9917,15.7931,0.8891,0.889,0.8891,29.1,-0.011,60.9,2.08,208379.0,9.6
+RandomForestRegressor,Tree-based ensemble (bagging),3.7924,2.8602,14.3825,0.899,0.899,0.8991,30.1,0.155,62.9,10.71,40503.0,13.8
+FMRegressor,Distance / kernel / neural (factorisation machine),4.0822,3.104,16.6645,0.8829,0.8829,0.8829,31.68,0.011,58.8,3.05,142315.0,7.2
+GBTRegressor,Free choice: tree-based boosting,3.8529,2.91,14.8448,0.8957,0.8957,0.8958,29.04,0.084,62.0,3.15,137644.0,12.4
+Persistence baseline,No model (tomorrow = today),4.3974,3.1515,19.3375,0.8642,0.8642,0.8642,33.3,0.006,61.2,,,0.0

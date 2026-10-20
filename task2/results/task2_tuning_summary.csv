@@ -1,0 +1,5 @@
+Model,Family,CV metric,CV folds,Combinations,Fits,Tuning rows,Best parameters,Best CV RMSE,CV RMSE std,Total tuning time (s),Final fit rows,Final fit time (s),Executor
+LinearRegression,Linear,RMSE (deg C),3,7,21,255855,"regParam=0.0, elasticNetParam=0.0",3.909,0.0574,161.0,2555512,49.0,"local[*], 12 cores, driver 4g, 32 shuffle partitions, CV parallelism 2"
+RandomForestRegressor,Tree-based ensemble (bagging),RMSE (deg C),3,4,12,255855,"numTrees=50, maxDepth=12",3.7761,0.0399,716.6,2555512,655.1,"local[*], 12 cores, driver 4g, 32 shuffle partitions, CV parallelism 2"
+FMRegressor,Distance / kernel / neural (factorisation machine),RMSE (deg C),3,4,12,255855,"factorSize=8, maxIter=100",4.0127,0.0477,719.7,2555512,1082.6,"local[*], 12 cores, driver 4g, 32 shuffle partitions, CV parallelism 2"
+GBTRegressor,Free choice: tree-based boosting,RMSE (deg C),3,4,12,255855,"maxDepth=5, maxIter=60",3.8237,0.0349,1100.1,2555512,661.8,"local[*], 12 cores, driver 4g, 32 shuffle partitions, CV parallelism 2"
