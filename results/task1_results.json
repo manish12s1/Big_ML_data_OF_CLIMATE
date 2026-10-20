@@ -1,9 +1,9 @@
 {
-  "pool_reference": "<<112>>",
+  "pool_reference": "112",
   "student": {
-    "student_name": "<<Manish saini>>",
-    "student_email": "<<sainim10@dcoventry.ac.uk>>",
-    "sid": "<<17142113>>"
+    "student_name": "Manish saini",
+    "student_email": "sainim10@coventry.ac.uk",
+    "sid": "17142113"
   },
   "dataset": {
     "name": "climate.csv - GHCN-Daily US weather-station records (1970-2023)",
@@ -97,5 +97,25 @@
     "full_scan_count_s": 5.34,
     "feature_build_s": 159.37,
     "pipeline_fit_s": 35.55
+  },
+  "handoff": {
+    "target_col": "label_TMAX_next",
+    "features_col": "features",
+    "train_path": "lakehouse/handoff/train",
+    "test_path": "lakehouse/handoff/test",
+    "preprocessing_model_path": "models/task1_preprocessing",
+    "train_rows": 2555512,
+    "test_rows": 433788,
+    "train_years": "1970-2015",
+    "test_years": "2016-2023",
+    "pipeline_stages": [
+      "ImputerModel",
+      "StringIndexerModel",
+      "OneHotEncoderModel",
+      "VectorAssembler",
+      "StandardScalerModel"
+    ],
+    "log_target": false,
+    "station_sample_pct": 5
   }
 }

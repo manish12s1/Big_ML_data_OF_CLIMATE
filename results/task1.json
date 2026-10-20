@@ -1,9 +1,9 @@
 {
-  "pool_reference": "<<POOL REF>>",
+  "pool_reference": "112",
   "student": {
-    "student_name": "<<YOUR FULL NAME>>",
-    "student_email": "<<YOUR UNIVERSITY E-MAIL>>",
-    "sid": "<<YOUR SID>>"
+    "student_name": "Manish saini",
+    "student_email": "sainim10@coventry.ac.uk",
+    "sid": "17142113"
   },
   "dataset": {
     "name": "climate.csv - GHCN-Daily US weather-station records (1970-2023)",
@@ -31,11 +31,12 @@
     "test_years": "2016-2023"
   },
   "cluster_config": {
-    "spark_version": "4.0.4",
+    "spark_version": "4.2.0",
     "master": "local[*]",
-    "default_parallelism": 2,
-    "driver_memory": "6g",
+    "default_parallelism": 12,
+    "driver_memory": "4g",
     "shuffle_partitions": 32,
+    "local_dir": "E:/spark-tmp",
     "ansi_enabled": "true"
   },
   "quality": {
@@ -50,7 +51,7 @@
       "duplicate_rows": 0
     }
   },
-  "station_day_rows": 57191149,
+  "station_day_rows": 2989300,
   "features": [
     "TMAX",
     "TMIN",
@@ -69,20 +70,20 @@
     "state_code (one-hot)"
   ],
   "feature_target_correlation": {
-    "TMAX": 0.9335,
-    "TMIN": 0.8575,
-    "TOBS": 0.8838,
-    "PRCP": -0.02,
-    "SNOW": -0.2269,
-    "SNWD": -0.3069,
-    "TMAX_lag1": 0.8812,
-    "TMAX_lag2": 0.8555,
-    "TMAX_roll7": 0.9041,
-    "TMIN_roll7": 0.847,
-    "DTR": 0.3228,
-    "doy_sin": -0.2204,
-    "doy_cos": -0.7263,
-    "YEAR_f": 0.0116
+    "TMAX": 0.9349,
+    "TMIN": 0.8573,
+    "TOBS": 0.8858,
+    "PRCP": -0.023,
+    "SNOW": -0.2355,
+    "SNWD": -0.275,
+    "TMAX_lag1": 0.8834,
+    "TMAX_lag2": 0.8579,
+    "TMAX_roll7": 0.9054,
+    "TMIN_roll7": 0.8464,
+    "DTR": 0.3397,
+    "doy_sin": -0.2255,
+    "doy_cos": -0.7267,
+    "YEAR_f": 0.0259
   },
   "pipeline_stages": [
     "ImputerModel",
@@ -93,7 +94,28 @@
   ],
   "pipeline_stage_count": 5,
   "timings_s": {
-    "full_scan_count_s": 9.72,
-    "pipeline_fit_s": 84.77
+    "full_scan_count_s": 5.34,
+    "feature_build_s": 159.37,
+    "pipeline_fit_s": 35.55
+  },
+  "handoff": {
+    "target_col": "label_TMAX_next",
+    "features_col": "features",
+    "train_path": "lakehouse/handoff/train",
+    "test_path": "lakehouse/handoff/test",
+    "preprocessing_model_path": "models/task1_preprocessing",
+    "train_rows": 2555512,
+    "test_rows": 433788,
+    "train_years": "1970-2015",
+    "test_years": "2016-2023",
+    "pipeline_stages": [
+      "ImputerModel",
+      "StringIndexerModel",
+      "OneHotEncoderModel",
+      "VectorAssembler",
+      "StandardScalerModel"
+    ],
+    "log_target": false,
+    "station_sample_pct": 5
   }
 }
