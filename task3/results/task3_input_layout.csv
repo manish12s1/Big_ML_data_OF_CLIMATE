@@ -1,0 +1,3 @@
+Split,Rows,Parquet files,File size min-max (MB),Spark input partitions,Cores,Rows per partition (min / median / max),Largest / median partition
+train,2555512,23,0.78-2.42,11,12,"145,462 / 237,354 / 331,084",1.39
+test,433788,12,0.22-0.81,12,12,"11,168 / 37,868 / 53,961",1.42

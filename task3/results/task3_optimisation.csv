@@ -1,0 +1,4 @@
+Change made,Setting,Rationale,Stage,Before (s),After (s),Faster (%)
+Persist the scored test set,"persist(MEMORY_AND_DISK), 4 columns","6 of 8 metric jobs re-read 433,788 rows and re-ran the pipeline + GBTRegressor (Table 3.1b); cache holds 4.8 MB vs 85.6 MB for all columns","test scan + score, repeated in 6 jobs",44.45,14.8,66.7
+Repartition before caching,11 -> 24 partitions (round-robin),"11 uneven partitions for 12 cores: longest task 1.13x the median on every pass; balanced tasks, 2 per core","GBTRegressor retrain, 16 data passes of 11 -> 24 tasks",205.99,245.09,-19.0
+Fit CV combinations in parallel,CrossValidator parallelism 1 -> 2,138 short jobs left cores idle (47.9% busy); 2 fits at a time -> 64.2% busy; 4 checked: 183.3 s,"CrossValidator.fit, LR 4 x 3 folds on 255,855 rows",183.33,200.49,-9.4
