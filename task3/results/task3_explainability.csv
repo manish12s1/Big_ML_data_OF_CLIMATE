@@ -1,0 +1,5 @@
+Item,Value
+Method used (SHAP or LIME),"SHAP - exact path-dependent TreeSHAP on the saved Spark trees (5,143 test days; additivity error 5e-14 deg C)"
+Model explained,GBTRegressor (60 trees) - recommended in Task 2
+Top five features,1. TMAX 2. TMAX_roll7 3. doy_cos 4. TOBS 5. PRCP
+Named bias risk,"Extreme-weather and regional bias: on test days >= 35 deg C the forecast is +1.9 deg C too cold and on days <= -10 deg C 5.4 deg C too warm; state RMSE ranges from 2.49 (Florida) to 5.04 deg C (South Dakota), following weather swing (rank corr. +0.73) more than station count (+0.17)"

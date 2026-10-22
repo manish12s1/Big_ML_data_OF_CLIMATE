@@ -31,8 +31,8 @@
     "driver_memory": "4g"
   },
   "spark_ui": {
-    "application_id": "local-1792588200755",
-    "url": "http://10.1.110.175:4040",
+    "application_id": "local-1792680147503",
+    "url": "http://10.1.125.75:4040",
     "rest_api_read": true
   },
   "optimisation": {
@@ -62,24 +62,24 @@
     ],
     "baseline": {
       "diagnosis": {
-        "wall_s": 70.63,
+        "wall_s": 38.59,
         "jobs": 8,
         "full_scans": 6,
-        "scan_time_s": 56.14,
-        "scan_share_pct": 94.0,
+        "scan_time_s": 29.93,
+        "scan_share_pct": 93.1,
         "scan_tasks": 12,
-        "skew_max_over_median": 1.09,
+        "skew_max_over_median": 1.06,
         "skew_rows_per_task": "11,168-53,961",
         "shuffle_write_mb": 0.06,
         "spill_mb": 0.0,
-        "gc_pct": 1.3,
-        "core_use_pct": 63.2
+        "gc_pct": 1.4,
+        "core_use_pct": 62.8
       },
       "jobs": [
         {
           "Job": 50,
           "Action": "treeAggregate",
-          "Duration (s)": 13.92,
+          "Duration (s)": 8.18,
           "Stages run": 3,
           "Stages skipped": 0,
           "Tasks": 16
@@ -87,7 +87,7 @@
         {
           "Job": 51,
           "Action": "treeAggregate",
-          "Duration (s)": 8.83,
+          "Duration (s)": 4.49,
           "Stages run": 3,
           "Stages skipped": 0,
           "Tasks": 16
@@ -95,7 +95,7 @@
         {
           "Job": 52,
           "Action": "treeAggregate",
-          "Duration (s)": 8.35,
+          "Duration (s)": 4.3,
           "Stages run": 3,
           "Stages skipped": 0,
           "Tasks": 16
@@ -103,7 +103,7 @@
         {
           "Job": 53,
           "Action": "treeAggregate",
-          "Duration (s)": 7.83,
+          "Duration (s)": 4.16,
           "Stages run": 3,
           "Stages skipped": 0,
           "Tasks": 16
@@ -111,7 +111,7 @@
         {
           "Job": 54,
           "Action": "first",
-          "Duration (s)": 9.3,
+          "Duration (s)": 4.43,
           "Stages run": 1,
           "Stages skipped": 0,
           "Tasks": 12
@@ -119,7 +119,7 @@
         {
           "Job": 55,
           "Action": "first",
-          "Duration (s)": 0.19,
+          "Duration (s)": 0.17,
           "Stages run": 1,
           "Stages skipped": 1,
           "Tasks": 1
@@ -127,7 +127,7 @@
         {
           "Job": 56,
           "Action": "toPandas",
-          "Duration (s)": 10.35,
+          "Duration (s)": 5.8,
           "Stages run": 1,
           "Stages skipped": 0,
           "Tasks": 12
@@ -135,7 +135,7 @@
         {
           "Job": 57,
           "Action": "toPandas",
-          "Duration (s)": 1.07,
+          "Duration (s)": 0.7,
           "Stages run": 1,
           "Stages skipped": 1,
           "Tasks": 1
@@ -148,16 +148,16 @@
           "Attempt": 0,
           "Action": "treeAggregate",
           "Tasks": 12,
-          "Duration (s)": 12.91,
-          "Task time (s)": 118.65,
+          "Duration (s)": 7.45,
+          "Task time (s)": 74.41,
           "Input rows": 433788,
           "Shuffle write (MB)": 0.01,
           "Shuffle read (MB)": 0.0,
           "Spill (MB)": 0.0,
-          "GC (s)": 1.62,
-          "Median task (s)": 10.275,
-          "Max task (s)": 11.22,
-          "Max / median": 1.09,
+          "GC (s)": 1.11,
+          "Median task (s)": 6.548,
+          "Max task (s)": 6.938,
+          "Max / median": 1.06,
           "Rows per task (min-max)": "11,168-53,961"
         },
         {
@@ -166,8 +166,8 @@
           "Attempt": 0,
           "Action": "treeAggregate",
           "Tasks": 3,
-          "Duration (s)": 0.28,
-          "Task time (s)": 0.59,
+          "Duration (s)": 0.27,
+          "Task time (s)": 0.56,
           "Input rows": 0,
           "Shuffle write (MB)": 0.0,
           "Shuffle read (MB)": 0.01,
@@ -184,8 +184,8 @@
           "Attempt": 0,
           "Action": "treeAggregate",
           "Tasks": 1,
-          "Duration (s)": 0.69,
-          "Task time (s)": 0.15,
+          "Duration (s)": 0.43,
+          "Task time (s)": 0.09,
           "Input rows": 0,
           "Shuffle write (MB)": 0.0,
           "Shuffle read (MB)": 0.0,
@@ -202,16 +202,16 @@
           "Attempt": 0,
           "Action": "treeAggregate",
           "Tasks": 12,
-          "Duration (s)": 8.3,
-          "Task time (s)": 73.9,
+          "Duration (s)": 4.18,
+          "Task time (s)": 39.8,
           "Input rows": 433788,
           "Shuffle write (MB)": 0.01,
           "Shuffle read (MB)": 0.0,
           "Spill (MB)": 0.0,
-          "GC (s)": 0.95,
-          "Median task (s)": 6.711,
-          "Max task (s)": 7.476,
-          "Max / median": 1.11,
+          "GC (s)": 0.62,
+          "Median task (s)": 3.644,
+          "Max task (s)": 4.082,
+          "Max / median": 1.12,
           "Rows per task (min-max)": "11,168-53,961"
         },
         {
@@ -220,8 +220,8 @@
           "Attempt": 0,
           "Action": "treeAggregate",
           "Tasks": 3,
-          "Duration (s)": 0.32,
-          "Task time (s)": 0.69,
+          "Duration (s)": 0.2,
+          "Task time (s)": 0.36,
           "Input rows": 0,
           "Shuffle write (MB)": 0.0,
           "Shuffle read (MB)": 0.01,
@@ -238,7 +238,7 @@
           "Attempt": 0,
           "Action": "treeAggregate",
           "Tasks": 1,
-          "Duration (s)": 0.17,
+          "Duration (s)": 0.1,
           "Task time (s)": 0.04,
           "Input rows": 0,
           "Shuffle write (MB)": 0.0,
@@ -256,16 +256,16 @@
           "Attempt": 0,
           "Action": "treeAggregate",
           "Tasks": 12,
-          "Duration (s)": 7.66,
-          "Task time (s)": 70.63,
+          "Duration (s)": 4.05,
+          "Task time (s)": 36.39,
           "Input rows": 433788,
           "Shuffle write (MB)": 0.01,
           "Shuffle read (MB)": 0.0,
           "Spill (MB)": 0.0,
-          "GC (s)": 0.91,
-          "Median task (s)": 6.481,
-          "Max task (s)": 7.532,
-          "Max / median": 1.16,
+          "GC (s)": 0.49,
+          "Median task (s)": 3.227,
+          "Max task (s)": 3.961,
+          "Max / median": 1.23,
           "Rows per task (min-max)": "11,168-53,961"
         },
         {
@@ -274,8 +274,8 @@
           "Attempt": 0,
           "Action": "treeAggregate",
           "Tasks": 3,
-          "Duration (s)": 0.57,
-          "Task time (s)": 1.35,
+          "Duration (s)": 0.17,
+          "Task time (s)": 0.29,
           "Input rows": 0,
           "Shuffle write (MB)": 0.0,
           "Shuffle read (MB)": 0.01,
@@ -292,8 +292,8 @@
           "Attempt": 0,
           "Action": "treeAggregate",
           "Tasks": 1,
-          "Duration (s)": 0.12,
-          "Task time (s)": 0.03,
+          "Duration (s)": 0.06,
+          "Task time (s)": 0.02,
           "Input rows": 0,
           "Shuffle write (MB)": 0.0,
           "Shuffle read (MB)": 0.0,
@@ -310,16 +310,16 @@
           "Attempt": 0,
           "Action": "treeAggregate",
           "Tasks": 12,
-          "Duration (s)": 7.64,
-          "Task time (s)": 71.7,
+          "Duration (s)": 4.02,
+          "Task time (s)": 38.11,
           "Input rows": 433788,
           "Shuffle write (MB)": 0.01,
           "Shuffle read (MB)": 0.0,
           "Spill (MB)": 0.0,
-          "GC (s)": 0.8,
-          "Median task (s)": 6.438,
-          "Max task (s)": 7.444,
-          "Max / median": 1.16,
+          "GC (s)": 0.51,
+          "Median task (s)": 3.408,
+          "Max task (s)": 3.934,
+          "Max / median": 1.15,
           "Rows per task (min-max)": "11,168-53,961"
         },
         {
@@ -328,8 +328,8 @@
           "Attempt": 0,
           "Action": "treeAggregate",
           "Tasks": 3,
-          "Duration (s)": 0.12,
-          "Task time (s)": 0.19,
+          "Duration (s)": 0.09,
+          "Task time (s)": 0.14,
           "Input rows": 0,
           "Shuffle write (MB)": 0.0,
           "Shuffle read (MB)": 0.01,
@@ -346,7 +346,7 @@
           "Attempt": 0,
           "Action": "treeAggregate",
           "Tasks": 1,
-          "Duration (s)": 0.07,
+          "Duration (s)": 0.05,
           "Task time (s)": 0.02,
           "Input rows": 0,
           "Shuffle write (MB)": 0.0,
@@ -364,16 +364,16 @@
           "Attempt": 0,
           "Action": "first",
           "Tasks": 12,
-          "Duration (s)": 9.29,
-          "Task time (s)": 90.69,
+          "Duration (s)": 4.43,
+          "Task time (s)": 42.92,
           "Input rows": 433788,
           "Shuffle write (MB)": 0.0,
           "Shuffle read (MB)": 0.0,
           "Spill (MB)": 0.0,
-          "GC (s)": 0.88,
-          "Median task (s)": 8.057,
-          "Max task (s)": 9.151,
-          "Max / median": 1.14,
+          "GC (s)": 0.44,
+          "Median task (s)": 3.817,
+          "Max task (s)": 4.39,
+          "Max / median": 1.15,
           "Rows per task (min-max)": "11,168-53,961"
         },
         {
@@ -382,8 +382,8 @@
           "Attempt": 0,
           "Action": "first",
           "Tasks": 1,
-          "Duration (s)": 0.18,
-          "Task time (s)": 0.16,
+          "Duration (s)": 0.17,
+          "Task time (s)": 0.15,
           "Input rows": 0,
           "Shuffle write (MB)": 0.0,
           "Shuffle read (MB)": 0.0,
@@ -400,16 +400,16 @@
           "Attempt": 0,
           "Action": "toPandas",
           "Tasks": 12,
-          "Duration (s)": 10.34,
-          "Task time (s)": 105.91,
+          "Duration (s)": 5.8,
+          "Task time (s)": 56.84,
           "Input rows": 433788,
           "Shuffle write (MB)": 0.02,
           "Shuffle read (MB)": 0.0,
           "Spill (MB)": 0.0,
-          "GC (s)": 1.82,
-          "Median task (s)": 9.488,
-          "Max task (s)": 10.256,
-          "Max / median": 1.08,
+          "GC (s)": 0.78,
+          "Median task (s)": 5.154,
+          "Max task (s)": 5.718,
+          "Max / median": 1.11,
           "Rows per task (min-max)": "11,168-53,961"
         },
         {
@@ -418,8 +418,8 @@
           "Attempt": 0,
           "Action": "toPandas",
           "Tasks": 1,
-          "Duration (s)": 1.07,
-          "Task time (s)": 1.0,
+          "Duration (s)": 0.69,
+          "Task time (s)": 0.67,
           "Input rows": 0,
           "Shuffle write (MB)": 0.0,
           "Shuffle read (MB)": 0.02,
@@ -438,48 +438,48 @@
         "Setting": "persist(MEMORY_AND_DISK), 4 columns",
         "Rationale": "6 of 8 metric jobs re-read 433,788 rows and re-ran the pipeline + GBTRegressor (Table 3.1b); cache holds 4.8 MB vs 85.6 MB for all columns",
         "Stage": "test scan + score, repeated in 6 jobs",
-        "Before (s)": 44.45,
-        "After (s)": 14.8,
-        "Faster (%)": 66.7
+        "Before (s)": 20.45,
+        "After (s)": 7.35,
+        "Faster (%)": 64.1
       },
       {
         "Change made": "Repartition before caching",
         "Setting": "11 -> 24 partitions (round-robin)",
-        "Rationale": "11 uneven partitions for 12 cores: longest task 1.13x the median on every pass; balanced tasks, 2 per core",
+        "Rationale": "11 uneven partitions for 12 cores: longest task 1.15x the median on every pass; balanced tasks, 2 per core",
         "Stage": "GBTRegressor retrain, 16 data passes of 11 -> 24 tasks",
-        "Before (s)": 205.99,
-        "After (s)": 245.09,
-        "Faster (%)": -19.0
+        "Before (s)": 103.63,
+        "After (s)": 126.64,
+        "Faster (%)": -22.2
       },
       {
         "Change made": "Fit CV combinations in parallel",
         "Setting": "CrossValidator parallelism 1 -> 2",
-        "Rationale": "138 short jobs left cores idle (47.9% busy); 2 fits at a time -> 64.2% busy; 4 checked: 183.3 s",
+        "Rationale": "138 short jobs left cores idle (47.6% busy); 2 fits at a time -> 64.9% busy; 4 checked: 71.6 s",
         "Stage": "CrossValidator.fit, LR 4 x 3 folds on 255,855 rows",
-        "Before (s)": 183.33,
-        "After (s)": 200.49,
-        "Faster (%)": -9.4
+        "Before (s)": 98.29,
+        "After (s)": 94.4,
+        "Faster (%)": 4.0
       }
     ],
     "details": {
       "persist": {
-        "before_s": 44.45170550001785,
-        "after_s": 14.800408200011589,
+        "before_s": 20.44961530000728,
+        "after_s": 7.351016899992828,
         "runs_before": [
-          48.79,
-          44.45,
-          41.92
+          27.27,
+          20.45,
+          18.54
         ],
         "runs_after": [
-          18.13,
-          14.8,
-          13.29
+          7.84,
+          7.35,
+          6.54
         ],
         "jobs_before": 8,
         "jobs_after": 11,
         "test_rows_read_before": 2602728,
-        "task_time_before_s": 352.32,
-        "task_time_after_s": 86.11,
+        "task_time_before_s": 155.91,
+        "task_time_after_s": 41.22,
         "storage_mb": {
           "all_columns_mb": [
             85.6,
@@ -492,33 +492,33 @@
         }
       },
       "repartition": {
-        "before_s": 205.99464985000668,
-        "after_s": 245.09423275002337,
+        "before_s": 103.62531339999987,
+        "after_s": 126.64109835000272,
         "runs_before": [
-          215.64,
-          196.35
+          106.28,
+          100.97
         ],
         "runs_after": [
-          254.6,
-          235.59
+          125.69,
+          127.59
         ],
         "partitions_before": 11,
         "partitions_after": 24,
         "passes_before": {
           "pass_stages": 16,
           "tasks_per_pass": 11,
-          "pass_time_s": 84.28,
-          "max_over_median": 1.13,
-          "max_over_mean": 1.21,
+          "pass_time_s": 38.84,
+          "max_over_median": 1.15,
+          "max_over_mean": 1.17,
           "cache_fill_stage": 328,
           "rows_per_task": "145,462-331,084"
         },
         "passes_after": {
           "pass_stages": 16,
           "tasks_per_pass": 24,
-          "pass_time_s": 87.66,
-          "max_over_median": 1.07,
-          "max_over_mean": 1.08,
+          "pass_time_s": 43.79,
+          "max_over_median": 1.13,
+          "max_over_mean": 1.12,
           "cache_fill_stage": 380,
           "rows_per_task": "106,478-106,482"
         },
@@ -529,49 +529,1480 @@
         "shuffle_write_mb_after": 230.9,
         "spill_mb_before": 0.0,
         "spill_mb_after": 0.0,
-        "core_use_before_pct": 68.9,
+        "core_use_before_pct": 70.2,
         "core_use_after_pct": 88.7,
         "timeline_stage_before": 348,
-        "timeline_stage_after": 413
+        "timeline_stage_after": 410
       },
       "cv_parallelism": {
-        "before_s": 183.33,
-        "after_s": 200.49,
-        "checked_4_s": 183.34,
-        "core_use_before_pct": 47.9,
-        "core_use_after_pct": 64.2,
+        "before_s": 98.29,
+        "after_s": 94.4,
+        "checked_4_s": 71.6,
+        "core_use_before_pct": 47.6,
+        "core_use_after_pct": 64.9,
         "jobs": 138,
         "table": [
           {
             "CV parallelism": 1,
-            "wall_s": 183.33,
+            "wall_s": 98.29,
             "jobs": 138,
             "stages": 220,
-            "task_time_s": 1054.79,
-            "core_use_pct": 47.9,
+            "task_time_s": 561.76,
+            "core_use_pct": 47.6,
             "spill_mb": 0.0
           },
           {
             "CV parallelism": 2,
-            "wall_s": 200.49,
+            "wall_s": 94.4,
             "jobs": 141,
             "stages": 223,
-            "task_time_s": 1544.28,
-            "core_use_pct": 64.2,
+            "task_time_s": 735.02,
+            "core_use_pct": 64.9,
             "spill_mb": 0.0
           },
           {
             "CV parallelism": 4,
-            "wall_s": 183.34,
+            "wall_s": 71.6,
             "jobs": 147,
             "stages": 229,
-            "task_time_s": 1778.93,
-            "core_use_pct": 80.9,
+            "task_time_s": 696.23,
+            "core_use_pct": 81.0,
             "spill_mb": 0.0
           }
         ]
       }
     },
-    "measured_at": "2026-10-21 14:41:49"
+    "measured_at": "2026-10-22 15:58:29"
+  },
+  "stability": {
+    "method": "test inputs perturbed (hash-based noise, identical rows for every model); models not retrained; delta = perturbed - clean on all test rows; rank 1 = smallest delta RMSE",
+    "main_perturbation": "Sensor noise 10% of SD (seed 42)",
+    "measured_features": [
+      "TMAX",
+      "TMIN",
+      "TOBS",
+      "PRCP",
+      "SNOW",
+      "SNWD",
+      "TMAX_lag1",
+      "TMAX_lag2",
+      "TMAX_roll7",
+      "TMIN_roll7",
+      "DTR"
+    ],
+    "noise_sd_per_feature_deg_c_at_10pct": {
+      "TMAX": 1.195,
+      "TMIN": 1.088,
+      "TOBS": 1.064,
+      "TMAX_lag1": 1.189,
+      "TMAX_lag2": 1.185,
+      "TMAX_roll7": 1.132,
+      "TMIN_roll7": 1.032,
+      "DTR": 0.539
+    },
+    "table_3_2": [
+      {
+        "Model": "FMRegressor",
+        "Perturbation applied": "Sensor noise 10% of SD (seed 42)",
+        "\u0394 RMSE (\u00b0C)": 0.0288,
+        "\u0394 R\u00b2": -0.0017,
+        "Rank": 1
+      },
+      {
+        "Model": "RandomForestRegressor",
+        "Perturbation applied": "Sensor noise 10% of SD (seed 42)",
+        "\u0394 RMSE (\u00b0C)": 0.0724,
+        "\u0394 R\u00b2": -0.0039,
+        "Rank": 2
+      },
+      {
+        "Model": "LinearRegression",
+        "Perturbation applied": "Sensor noise 10% of SD (seed 42)",
+        "\u0394 RMSE (\u00b0C)": 0.0773,
+        "\u0394 R\u00b2": -0.0044,
+        "Rank": 3
+      },
+      {
+        "Model": "GBTRegressor",
+        "Perturbation applied": "Sensor noise 10% of SD (seed 42)",
+        "\u0394 RMSE (\u00b0C)": 0.0856,
+        "\u0394 R\u00b2": -0.0047,
+        "Rank": 4
+      }
+    ],
+    "detail": [
+      {
+        "Model": "FMRegressor",
+        "Perturbation": "Sensor noise 10% of SD (seed 42)",
+        "Clean RMSE": 4.0822,
+        "Perturbed RMSE": 4.111,
+        "Delta RMSE": 0.0288,
+        "Delta RMSE (%)": 0.71,
+        "Clean R2": 0.8829,
+        "Perturbed R2": 0.8813,
+        "Delta R2": -0.0017,
+        "Mean |forecast change| (deg C)": 0.389,
+        "Mean forecast change (deg C)": 0.0,
+        "SD of forecast change": 0.489,
+        "95th pct |forecast change|": 0.961,
+        "Days moved > 1 deg C (%)": 4.2,
+        "Rank": 1
+      },
+      {
+        "Model": "RandomForestRegressor",
+        "Perturbation": "Sensor noise 10% of SD (seed 42)",
+        "Clean RMSE": 3.7924,
+        "Perturbed RMSE": 3.8648,
+        "Delta RMSE": 0.0724,
+        "Delta RMSE (%)": 1.91,
+        "Clean R2": 0.899,
+        "Perturbed R2": 0.8951,
+        "Delta R2": -0.0039,
+        "Mean |forecast change| (deg C)": 0.644,
+        "Mean forecast change (deg C)": -0.004,
+        "SD of forecast change": 0.878,
+        "95th pct |forecast change|": 1.753,
+        "Days moved > 1 deg C (%)": 23.0,
+        "Rank": 2
+      },
+      {
+        "Model": "LinearRegression",
+        "Perturbation": "Sensor noise 10% of SD (seed 42)",
+        "Clean RMSE": 3.974,
+        "Perturbed RMSE": 4.0513,
+        "Delta RMSE": 0.0773,
+        "Delta RMSE (%)": 1.94,
+        "Clean R2": 0.8891,
+        "Perturbed R2": 0.8847,
+        "Delta R2": -0.0044,
+        "Mean |forecast change| (deg C)": 0.636,
+        "Mean forecast change (deg C)": -0.001,
+        "SD of forecast change": 0.798,
+        "95th pct |forecast change|": 1.562,
+        "Days moved > 1 deg C (%)": 21.0,
+        "Rank": 3
+      },
+      {
+        "Model": "GBTRegressor",
+        "Perturbation": "Sensor noise 10% of SD (seed 42)",
+        "Clean RMSE": 3.8529,
+        "Perturbed RMSE": 3.9385,
+        "Delta RMSE": 0.0856,
+        "Delta RMSE (%)": 2.22,
+        "Clean R2": 0.8957,
+        "Perturbed R2": 0.891,
+        "Delta R2": -0.0047,
+        "Mean |forecast change| (deg C)": 0.798,
+        "Mean forecast change (deg C)": -0.007,
+        "SD of forecast change": 1.287,
+        "95th pct |forecast change|": 2.857,
+        "Days moved > 1 deg C (%)": 28.6,
+        "Rank": 4
+      }
+    ],
+    "all": [
+      {
+        "Model": "LinearRegression",
+        "Perturbation": "Sensor noise 10% of SD (seed 42)",
+        "Clean RMSE": 3.974,
+        "Perturbed RMSE": 4.0513,
+        "Delta RMSE": 0.0773,
+        "Delta RMSE (%)": 1.94,
+        "Clean R2": 0.8891,
+        "Perturbed R2": 0.8847,
+        "Delta R2": -0.0044,
+        "Mean |forecast change| (deg C)": 0.636,
+        "Mean forecast change (deg C)": -0.001,
+        "SD of forecast change": 0.798,
+        "95th pct |forecast change|": 1.562,
+        "Days moved > 1 deg C (%)": 21.0
+      },
+      {
+        "Model": "RandomForestRegressor",
+        "Perturbation": "Sensor noise 10% of SD (seed 42)",
+        "Clean RMSE": 3.7924,
+        "Perturbed RMSE": 3.8648,
+        "Delta RMSE": 0.0724,
+        "Delta RMSE (%)": 1.91,
+        "Clean R2": 0.899,
+        "Perturbed R2": 0.8951,
+        "Delta R2": -0.0039,
+        "Mean |forecast change| (deg C)": 0.644,
+        "Mean forecast change (deg C)": -0.004,
+        "SD of forecast change": 0.878,
+        "95th pct |forecast change|": 1.753,
+        "Days moved > 1 deg C (%)": 23.0
+      },
+      {
+        "Model": "FMRegressor",
+        "Perturbation": "Sensor noise 10% of SD (seed 42)",
+        "Clean RMSE": 4.0822,
+        "Perturbed RMSE": 4.111,
+        "Delta RMSE": 0.0288,
+        "Delta RMSE (%)": 0.71,
+        "Clean R2": 0.8829,
+        "Perturbed R2": 0.8813,
+        "Delta R2": -0.0017,
+        "Mean |forecast change| (deg C)": 0.389,
+        "Mean forecast change (deg C)": 0.0,
+        "SD of forecast change": 0.489,
+        "95th pct |forecast change|": 0.961,
+        "Days moved > 1 deg C (%)": 4.2
+      },
+      {
+        "Model": "GBTRegressor",
+        "Perturbation": "Sensor noise 10% of SD (seed 42)",
+        "Clean RMSE": 3.8529,
+        "Perturbed RMSE": 3.9385,
+        "Delta RMSE": 0.0856,
+        "Delta RMSE (%)": 2.22,
+        "Clean R2": 0.8957,
+        "Perturbed R2": 0.891,
+        "Delta R2": -0.0047,
+        "Mean |forecast change| (deg C)": 0.798,
+        "Mean forecast change (deg C)": -0.007,
+        "SD of forecast change": 1.287,
+        "95th pct |forecast change|": 2.857,
+        "Days moved > 1 deg C (%)": 28.6
+      },
+      {
+        "Model": "LinearRegression",
+        "Perturbation": "Sensor noise 10% of SD (seed 7)",
+        "Clean RMSE": 3.974,
+        "Perturbed RMSE": 4.0529,
+        "Delta RMSE": 0.0789,
+        "Delta RMSE (%)": 1.99,
+        "Clean R2": 0.8891,
+        "Perturbed R2": 0.8846,
+        "Delta R2": -0.0044,
+        "Mean |forecast change| (deg C)": 0.639,
+        "Mean forecast change (deg C)": -0.0,
+        "SD of forecast change": 0.8,
+        "95th pct |forecast change|": 1.569,
+        "Days moved > 1 deg C (%)": 21.2
+      },
+      {
+        "Model": "RandomForestRegressor",
+        "Perturbation": "Sensor noise 10% of SD (seed 7)",
+        "Clean RMSE": 3.7924,
+        "Perturbed RMSE": 3.8654,
+        "Delta RMSE": 0.073,
+        "Delta RMSE (%)": 1.93,
+        "Clean R2": 0.899,
+        "Perturbed R2": 0.895,
+        "Delta R2": -0.0039,
+        "Mean |forecast change| (deg C)": 0.647,
+        "Mean forecast change (deg C)": -0.005,
+        "SD of forecast change": 0.88,
+        "95th pct |forecast change|": 1.752,
+        "Days moved > 1 deg C (%)": 23.2
+      },
+      {
+        "Model": "FMRegressor",
+        "Perturbation": "Sensor noise 10% of SD (seed 7)",
+        "Clean RMSE": 4.0822,
+        "Perturbed RMSE": 4.1123,
+        "Delta RMSE": 0.03,
+        "Delta RMSE (%)": 0.74,
+        "Clean R2": 0.8829,
+        "Perturbed R2": 0.8812,
+        "Delta R2": -0.0017,
+        "Mean |forecast change| (deg C)": 0.39,
+        "Mean forecast change (deg C)": 0.0,
+        "SD of forecast change": 0.49,
+        "95th pct |forecast change|": 0.962,
+        "Days moved > 1 deg C (%)": 4.2
+      },
+      {
+        "Model": "GBTRegressor",
+        "Perturbation": "Sensor noise 10% of SD (seed 7)",
+        "Clean RMSE": 3.8529,
+        "Perturbed RMSE": 3.9407,
+        "Delta RMSE": 0.0878,
+        "Delta RMSE (%)": 2.28,
+        "Clean R2": 0.8957,
+        "Perturbed R2": 0.8909,
+        "Delta R2": -0.0048,
+        "Mean |forecast change| (deg C)": 0.798,
+        "Mean forecast change (deg C)": -0.008,
+        "SD of forecast change": 1.288,
+        "95th pct |forecast change|": 2.855,
+        "Days moved > 1 deg C (%)": 28.5
+      },
+      {
+        "Model": "LinearRegression",
+        "Perturbation": "Sensor noise 5% of SD",
+        "Clean RMSE": 3.974,
+        "Perturbed RMSE": 3.993,
+        "Delta RMSE": 0.0189,
+        "Delta RMSE (%)": 0.48,
+        "Clean R2": 0.8891,
+        "Perturbed R2": 0.888,
+        "Delta R2": -0.0011,
+        "Mean |forecast change| (deg C)": 0.318,
+        "Mean forecast change (deg C)": -0.0,
+        "SD of forecast change": 0.399,
+        "95th pct |forecast change|": 0.781,
+        "Days moved > 1 deg C (%)": 1.2
+      },
+      {
+        "Model": "RandomForestRegressor",
+        "Perturbation": "Sensor noise 5% of SD",
+        "Clean RMSE": 3.7924,
+        "Perturbed RMSE": 3.8127,
+        "Delta RMSE": 0.0202,
+        "Delta RMSE (%)": 0.53,
+        "Clean R2": 0.899,
+        "Perturbed R2": 0.8979,
+        "Delta R2": -0.0011,
+        "Mean |forecast change| (deg C)": 0.359,
+        "Mean forecast change (deg C)": 0.0,
+        "SD of forecast change": 0.56,
+        "95th pct |forecast change|": 1.159,
+        "Days moved > 1 deg C (%)": 8.1
+      },
+      {
+        "Model": "FMRegressor",
+        "Perturbation": "Sensor noise 5% of SD",
+        "Clean RMSE": 4.0822,
+        "Perturbed RMSE": 4.0893,
+        "Delta RMSE": 0.0071,
+        "Delta RMSE (%)": 0.17,
+        "Clean R2": 0.8829,
+        "Perturbed R2": 0.8825,
+        "Delta R2": -0.0004,
+        "Mean |forecast change| (deg C)": 0.195,
+        "Mean forecast change (deg C)": 0.0,
+        "SD of forecast change": 0.245,
+        "95th pct |forecast change|": 0.481,
+        "Days moved > 1 deg C (%)": 0.0
+      },
+      {
+        "Model": "GBTRegressor",
+        "Perturbation": "Sensor noise 5% of SD",
+        "Clean RMSE": 3.8529,
+        "Perturbed RMSE": 3.8751,
+        "Delta RMSE": 0.0222,
+        "Delta RMSE (%)": 0.58,
+        "Clean R2": 0.8957,
+        "Perturbed R2": 0.8945,
+        "Delta R2": -0.0012,
+        "Mean |forecast change| (deg C)": 0.427,
+        "Mean forecast change (deg C)": -0.001,
+        "SD of forecast change": 0.887,
+        "95th pct |forecast change|": 2.293,
+        "Days moved > 1 deg C (%)": 14.5
+      },
+      {
+        "Model": "LinearRegression",
+        "Perturbation": "10% of readings missing",
+        "Clean RMSE": 3.974,
+        "Perturbed RMSE": 4.7591,
+        "Delta RMSE": 0.785,
+        "Delta RMSE (%)": 19.75,
+        "Clean R2": 0.8891,
+        "Perturbed R2": 0.8409,
+        "Delta R2": -0.0482,
+        "Mean |forecast change| (deg C)": 1.104,
+        "Mean forecast change (deg C)": 0.09,
+        "SD of forecast change": 2.599,
+        "95th pct |forecast change|": 5.925,
+        "Days moved > 1 deg C (%)": 26.0
+      },
+      {
+        "Model": "RandomForestRegressor",
+        "Perturbation": "10% of readings missing",
+        "Clean RMSE": 3.7924,
+        "Perturbed RMSE": 4.3717,
+        "Delta RMSE": 0.5792,
+        "Delta RMSE (%)": 15.27,
+        "Clean R2": 0.899,
+        "Perturbed R2": 0.8658,
+        "Delta R2": -0.0332,
+        "Mean |forecast change| (deg C)": 0.818,
+        "Mean forecast change (deg C)": 0.084,
+        "SD of forecast change": 2.123,
+        "95th pct |forecast change|": 4.776,
+        "Days moved > 1 deg C (%)": 18.9
+      },
+      {
+        "Model": "FMRegressor",
+        "Perturbation": "10% of readings missing",
+        "Clean RMSE": 4.0822,
+        "Perturbed RMSE": 4.4475,
+        "Delta RMSE": 0.3652,
+        "Delta RMSE (%)": 8.95,
+        "Clean R2": 0.8829,
+        "Perturbed R2": 0.8611,
+        "Delta R2": -0.0219,
+        "Mean |forecast change| (deg C)": 0.946,
+        "Mean forecast change (deg C)": 0.014,
+        "SD of forecast change": 1.77,
+        "95th pct |forecast change|": 4.05,
+        "Days moved > 1 deg C (%)": 30.9
+      },
+      {
+        "Model": "GBTRegressor",
+        "Perturbation": "10% of readings missing",
+        "Clean RMSE": 3.8529,
+        "Perturbed RMSE": 4.5774,
+        "Delta RMSE": 0.7245,
+        "Delta RMSE (%)": 18.8,
+        "Clean R2": 0.8957,
+        "Perturbed R2": 0.8528,
+        "Delta R2": -0.0429,
+        "Mean |forecast change| (deg C)": 0.87,
+        "Mean forecast change (deg C)": 0.124,
+        "SD of forecast change": 2.487,
+        "95th pct |forecast change|": 5.47,
+        "Days moved > 1 deg C (%)": 18.0
+      },
+      {
+        "Model": "LinearRegression",
+        "Perturbation": "TMAX +1 deg C only (check)",
+        "Clean RMSE": 3.974,
+        "Perturbed RMSE": 4.0196,
+        "Delta RMSE": 0.0456,
+        "Delta RMSE (%)": 1.15,
+        "Clean R2": 0.8891,
+        "Perturbed R2": 0.8865,
+        "Delta R2": -0.0026,
+        "Mean |forecast change| (deg C)": 0.593,
+        "Mean forecast change (deg C)": 0.593,
+        "SD of forecast change": 0.0,
+        "95th pct |forecast change|": 0.593,
+        "Days moved > 1 deg C (%)": 0.0
+      },
+      {
+        "Model": "RandomForestRegressor",
+        "Perturbation": "TMAX +1 deg C only (check)",
+        "Clean RMSE": 3.7924,
+        "Perturbed RMSE": 3.8104,
+        "Delta RMSE": 0.018,
+        "Delta RMSE (%)": 0.47,
+        "Clean R2": 0.899,
+        "Perturbed R2": 0.898,
+        "Delta R2": -0.001,
+        "Mean |forecast change| (deg C)": 0.558,
+        "Mean forecast change (deg C)": 0.554,
+        "SD of forecast change": 0.444,
+        "95th pct |forecast change|": 1.238,
+        "Days moved > 1 deg C (%)": 13.3
+      },
+      {
+        "Model": "FMRegressor",
+        "Perturbation": "TMAX +1 deg C only (check)",
+        "Clean RMSE": 4.0822,
+        "Perturbed RMSE": 4.0872,
+        "Delta RMSE": 0.0049,
+        "Delta RMSE (%)": 0.12,
+        "Clean R2": 0.8829,
+        "Perturbed R2": 0.8827,
+        "Delta R2": -0.0003,
+        "Mean |forecast change| (deg C)": 0.212,
+        "Mean forecast change (deg C)": 0.212,
+        "SD of forecast change": 0.009,
+        "95th pct |forecast change|": 0.225,
+        "Days moved > 1 deg C (%)": 0.0
+      },
+      {
+        "Model": "GBTRegressor",
+        "Perturbation": "TMAX +1 deg C only (check)",
+        "Clean RMSE": 3.8529,
+        "Perturbed RMSE": 3.9016,
+        "Delta RMSE": 0.0487,
+        "Delta RMSE (%)": 1.26,
+        "Clean R2": 0.8957,
+        "Perturbed R2": 0.8931,
+        "Delta R2": -0.0027,
+        "Mean |forecast change| (deg C)": 0.673,
+        "Mean forecast change (deg C)": 0.651,
+        "SD of forecast change": 0.948,
+        "95th pct |forecast change|": 2.543,
+        "Days moved > 1 deg C (%)": 26.0
+      }
+    ],
+    "most_stable": "FMRegressor",
+    "least_stable": "GBTRegressor",
+    "recommended_model": "GBTRegressor",
+    "recommended_rank": 4,
+    "seed_check": {
+      "max_abs_delta_rmse_difference": 0.0022,
+      "ranking_unchanged": true
+    },
+    "linear_regression_check": {
+      "expected_sd": 0.8,
+      "measured_sd": 0.798
+    },
+    "scoring_time_s": {
+      "clean": 41.9,
+      "noise10_s42": 37.6,
+      "noise10_s7": 37.8,
+      "noise5": 39.3,
+      "missing10": 38.3,
+      "tmax_plus1": 34.5
+    }
+  },
+  "explainability": {
+    "method": "SHAP: exact path-dependent TreeSHAP computed from the saved Spark trees (toDebugString); node covers from a 2% training sample; state one-hots grouped",
+    "model_explained": "GBTRegressor",
+    "explained_rows": 5143,
+    "background_rows": 51053,
+    "base_value": 17.2187,
+    "additivity_max_error": 4.973799150320701e-14,
+    "shap_seconds": 10.7,
+    "top_five_features": [
+      "TMAX",
+      "TMAX_roll7",
+      "doy_cos",
+      "TOBS",
+      "PRCP"
+    ],
+    "importance": [
+      {
+        "Rank": 1,
+        "Feature": "TMAX",
+        "Mean |SHAP| (deg C)": 7.9205,
+        "Spark split importance": 0.7962,
+        "Share of total |SHAP| (%)": 66.3
+      },
+      {
+        "Rank": 2,
+        "Feature": "TMAX_roll7",
+        "Mean |SHAP| (deg C)": 0.8116,
+        "Spark split importance": 0.0272,
+        "Share of total |SHAP| (%)": 6.8
+      },
+      {
+        "Rank": 3,
+        "Feature": "doy_cos",
+        "Mean |SHAP| (deg C)": 0.7587,
+        "Spark split importance": 0.0301,
+        "Share of total |SHAP| (%)": 6.3
+      },
+      {
+        "Rank": 4,
+        "Feature": "TOBS",
+        "Mean |SHAP| (deg C)": 0.7083,
+        "Spark split importance": 0.042,
+        "Share of total |SHAP| (%)": 5.9
+      },
+      {
+        "Rank": 5,
+        "Feature": "PRCP",
+        "Mean |SHAP| (deg C)": 0.6268,
+        "Spark split importance": 0.0303,
+        "Share of total |SHAP| (%)": 5.2
+      },
+      {
+        "Rank": 6,
+        "Feature": "TMAX_lag1",
+        "Mean |SHAP| (deg C)": 0.2577,
+        "Spark split importance": 0.007,
+        "Share of total |SHAP| (%)": 2.2
+      },
+      {
+        "Rank": 7,
+        "Feature": "state_code",
+        "Mean |SHAP| (deg C)": 0.2321,
+        "Spark split importance": 0.0176,
+        "Share of total |SHAP| (%)": 1.9
+      },
+      {
+        "Rank": 8,
+        "Feature": "DTR",
+        "Mean |SHAP| (deg C)": 0.2115,
+        "Spark split importance": 0.0328,
+        "Share of total |SHAP| (%)": 1.8
+      },
+      {
+        "Rank": 9,
+        "Feature": "YEAR_f",
+        "Mean |SHAP| (deg C)": 0.1075,
+        "Spark split importance": 0.0012,
+        "Share of total |SHAP| (%)": 0.9
+      },
+      {
+        "Rank": 10,
+        "Feature": "SNOW",
+        "Mean |SHAP| (deg C)": 0.0951,
+        "Spark split importance": 0.0035,
+        "Share of total |SHAP| (%)": 0.8
+      },
+      {
+        "Rank": 11,
+        "Feature": "TMIN",
+        "Mean |SHAP| (deg C)": 0.0918,
+        "Spark split importance": 0.005,
+        "Share of total |SHAP| (%)": 0.8
+      },
+      {
+        "Rank": 12,
+        "Feature": "doy_sin",
+        "Mean |SHAP| (deg C)": 0.0555,
+        "Spark split importance": 0.003,
+        "Share of total |SHAP| (%)": 0.5
+      },
+      {
+        "Rank": 13,
+        "Feature": "SNWD",
+        "Mean |SHAP| (deg C)": 0.0261,
+        "Spark split importance": 0.0009,
+        "Share of total |SHAP| (%)": 0.2
+      },
+      {
+        "Rank": 14,
+        "Feature": "TMIN_roll7",
+        "Mean |SHAP| (deg C)": 0.0252,
+        "Spark split importance": 0.0028,
+        "Share of total |SHAP| (%)": 0.2
+      },
+      {
+        "Rank": 15,
+        "Feature": "TMAX_lag2",
+        "Mean |SHAP| (deg C)": 0.0226,
+        "Spark split importance": 0.0005,
+        "Share of total |SHAP| (%)": 0.2
+      }
+    ],
+    "fairness": {
+      "by_state": {
+        "GBTRegressor": [
+          {
+            "state_code": "08",
+            "State": "Florida",
+            "Test rows": 2723,
+            "RMSE": 2.487,
+            "Bias": 0.506,
+            "SD of tomorrow's TMAX": 5.015,
+            "Training stations": 1,
+            "Training rows": 16629
+          },
+          {
+            "state_code": "38",
+            "State": "South Carolina",
+            "Test rows": 2748,
+            "RMSE": 2.85,
+            "Bias": 0.287,
+            "SD of tomorrow's TMAX": 8.0,
+            "Training stations": 1,
+            "Training rows": 15908
+          },
+          {
+            "state_code": "02",
+            "State": "Arizona",
+            "Test rows": 17062,
+            "RMSE": 2.982,
+            "Bias": 0.131,
+            "SD of tomorrow's TMAX": 9.838,
+            "Training stations": 7,
+            "Training rows": 84984
+          },
+          {
+            "state_code": "35",
+            "State": "Oregon",
+            "Test rows": 11911,
+            "RMSE": 3.023,
+            "Bias": -0.153,
+            "SD of tomorrow's TMAX": 9.082,
+            "Training stations": 5,
+            "Training rows": 77341
+          },
+          {
+            "state_code": "45",
+            "State": "Washington",
+            "Test rows": 3866,
+            "RMSE": 3.045,
+            "Bias": -0.043,
+            "SD of tomorrow's TMAX": 9.276,
+            "Training stations": 2,
+            "Training rows": 32175
+          },
+          {
+            "state_code": "04",
+            "State": "California",
+            "Test rows": 30998,
+            "RMSE": 3.15,
+            "Bias": 0.353,
+            "SD of tomorrow's TMAX": 8.918,
+            "Training stations": 14,
+            "Training rows": 177435
+          },
+          {
+            "state_code": "01",
+            "State": "Alabama",
+            "Test rows": 5407,
+            "RMSE": 3.277,
+            "Bias": 0.433,
+            "SD of tomorrow's TMAX": 8.224,
+            "Training stations": 3,
+            "Training rows": 34991
+          },
+          {
+            "state_code": "42",
+            "State": "Utah",
+            "Test rows": 8820,
+            "RMSE": 3.284,
+            "Bias": 0.315,
+            "SD of tomorrow's TMAX": 12.004,
+            "Training stations": 4,
+            "Training rows": 56217
+          },
+          {
+            "state_code": "10",
+            "State": "Idaho",
+            "Test rows": 10846,
+            "RMSE": 3.316,
+            "Bias": 0.028,
+            "SD of tomorrow's TMAX": 12.272,
+            "Training stations": 4,
+            "Training rows": 62284
+          },
+          {
+            "state_code": "03",
+            "State": "Arkansas",
+            "Test rows": 4663,
+            "RMSE": 3.382,
+            "Bias": 0.283,
+            "SD of tomorrow's TMAX": 9.363,
+            "Training stations": 2,
+            "Training rows": 32252
+          },
+          {
+            "state_code": "09",
+            "State": "Georgia",
+            "Test rows": 2814,
+            "RMSE": 3.416,
+            "Bias": 0.816,
+            "SD of tomorrow's TMAX": 7.816,
+            "Training stations": 1,
+            "Training rows": 5103
+          },
+          {
+            "state_code": "40",
+            "State": "Tennessee",
+            "Test rows": 14471,
+            "RMSE": 3.434,
+            "Bias": 0.26,
+            "SD of tomorrow's TMAX": 9.088,
+            "Training stations": 6,
+            "Training rows": 96053
+          },
+          {
+            "state_code": "44",
+            "State": "Virginia",
+            "Test rows": 5106,
+            "RMSE": 3.444,
+            "Bias": 0.221,
+            "SD of tomorrow's TMAX": 9.014,
+            "Training stations": 2,
+            "Training rows": 28854
+          },
+          {
+            "state_code": "31",
+            "State": "North Carolina",
+            "Test rows": 10682,
+            "RMSE": 3.474,
+            "Bias": 0.17,
+            "SD of tomorrow's TMAX": 8.421,
+            "Training stations": 4,
+            "Training rows": 45778
+          },
+          {
+            "state_code": "20",
+            "State": "Michigan",
+            "Test rows": 10618,
+            "RMSE": 3.513,
+            "Bias": -0.016,
+            "SD of tomorrow's TMAX": 11.75,
+            "Training stations": 5,
+            "Training rows": 73278
+          },
+          {
+            "state_code": "22",
+            "State": "Mississippi",
+            "Test rows": 1994,
+            "RMSE": 3.53,
+            "Bias": 0.557,
+            "SD of tomorrow's TMAX": 9.075,
+            "Training stations": 1,
+            "Training rows": 16619
+          },
+          {
+            "state_code": "47",
+            "State": "Wisconsin",
+            "Test rows": 12520,
+            "RMSE": 3.573,
+            "Bias": -0.007,
+            "SD of tomorrow's TMAX": 12.139,
+            "Training stations": 6,
+            "Training rows": 83097
+          },
+          {
+            "state_code": "29",
+            "State": "New Mexico",
+            "Test rows": 3903,
+            "RMSE": 3.67,
+            "Bias": 0.216,
+            "SD of tomorrow's TMAX": 10.214,
+            "Training stations": 2,
+            "Training rows": 30947
+          },
+          {
+            "state_code": "05",
+            "State": "Colorado",
+            "Test rows": 18738,
+            "RMSE": 3.744,
+            "Bias": 0.019,
+            "SD of tomorrow's TMAX": 10.765,
+            "Training stations": 8,
+            "Training rows": 115743
+          },
+          {
+            "state_code": "06",
+            "State": "Connecticut",
+            "Test rows": 3843,
+            "RMSE": 3.801,
+            "Bias": -0.344,
+            "SD of tomorrow's TMAX": 10.834,
+            "Training stations": 2,
+            "Training rows": 17999
+          },
+          {
+            "state_code": "33",
+            "State": "Ohio",
+            "Test rows": 3454,
+            "RMSE": 3.805,
+            "Bias": 0.227,
+            "SD of tomorrow's TMAX": 11.11,
+            "Training stations": 4,
+            "Training rows": 56994
+          },
+          {
+            "state_code": "12",
+            "State": "Indiana",
+            "Test rows": 5304,
+            "RMSE": 3.848,
+            "Bias": -0.117,
+            "SD of tomorrow's TMAX": 11.59,
+            "Training stations": 2,
+            "Training rows": 33070
+          },
+          {
+            "state_code": "17",
+            "State": "Maine",
+            "Test rows": 2569,
+            "RMSE": 3.894,
+            "Bias": -0.315,
+            "SD of tomorrow's TMAX": 11.144,
+            "Training stations": 1,
+            "Training rows": 16516
+          },
+          {
+            "state_code": "30",
+            "State": "New York",
+            "Test rows": 11599,
+            "RMSE": 3.963,
+            "Bias": -0.209,
+            "SD of tomorrow's TMAX": 11.148,
+            "Training stations": 7,
+            "Training rows": 46935
+          },
+          {
+            "state_code": "11",
+            "State": "Illinois",
+            "Test rows": 13738,
+            "RMSE": 3.965,
+            "Bias": -0.033,
+            "SD of tomorrow's TMAX": 11.827,
+            "Training stations": 6,
+            "Training rows": 38973
+          },
+          {
+            "state_code": "36",
+            "State": "Pennsylvania",
+            "Test rows": 11176,
+            "RMSE": 3.977,
+            "Bias": 0.217,
+            "SD of tomorrow's TMAX": 10.499,
+            "Training stations": 4,
+            "Training rows": 51066
+          },
+          {
+            "state_code": "21",
+            "State": "Minnesota",
+            "Test rows": 8623,
+            "RMSE": 3.981,
+            "Bias": -0.144,
+            "SD of tomorrow's TMAX": 13.491,
+            "Training stations": 4,
+            "Training rows": 53751
+          },
+          {
+            "state_code": "OTHER",
+            "State": "other networks",
+            "Test rows": 82302,
+            "RMSE": 4.025,
+            "Bias": 0.068,
+            "SD of tomorrow's TMAX": 11.97,
+            "Training stations": 30,
+            "Training rows": 474924
+          },
+          {
+            "state_code": "50",
+            "State": "Alaska",
+            "Test rows": 4307,
+            "RMSE": 4.076,
+            "Bias": -0.113,
+            "SD of tomorrow's TMAX": 13.659,
+            "Training stations": 2,
+            "Training rows": 29473
+          },
+          {
+            "state_code": "23",
+            "State": "Missouri",
+            "Test rows": 13659,
+            "RMSE": 4.096,
+            "Bias": 0.274,
+            "SD of tomorrow's TMAX": 11.133,
+            "Training stations": 6,
+            "Training rows": 77112
+          },
+          {
+            "state_code": "41",
+            "State": "Texas",
+            "Test rows": 15593,
+            "RMSE": 4.151,
+            "Bias": 0.317,
+            "SD of tomorrow's TMAX": 9.322,
+            "Training stations": 6,
+            "Training rows": 88707
+          },
+          {
+            "state_code": "13",
+            "State": "Iowa",
+            "Test rows": 12340,
+            "RMSE": 4.179,
+            "Bias": -0.105,
+            "SD of tomorrow's TMAX": 12.749,
+            "Training stations": 5,
+            "Training rows": 81381
+          },
+          {
+            "state_code": "48",
+            "State": "Wyoming",
+            "Test rows": 24082,
+            "RMSE": 4.244,
+            "Bias": -0.1,
+            "SD of tomorrow's TMAX": 12.314,
+            "Training stations": 9,
+            "Training rows": 129165
+          },
+          {
+            "state_code": "24",
+            "State": "Montana",
+            "Test rows": 7117,
+            "RMSE": 4.613,
+            "Bias": -0.503,
+            "SD of tomorrow's TMAX": 12.468,
+            "Training stations": 3,
+            "Training rows": 44323
+          },
+          {
+            "state_code": "25",
+            "State": "Nebraska",
+            "Test rows": 13304,
+            "RMSE": 4.785,
+            "Bias": 0.152,
+            "SD of tomorrow's TMAX": 12.565,
+            "Training stations": 5,
+            "Training rows": 80855
+          },
+          {
+            "state_code": "32",
+            "State": "North Dakota",
+            "Test rows": 7075,
+            "RMSE": 4.813,
+            "Bias": -0.286,
+            "SD of tomorrow's TMAX": 14.376,
+            "Training stations": 3,
+            "Training rows": 42428
+          },
+          {
+            "state_code": "14",
+            "State": "Kansas",
+            "Test rows": 5537,
+            "RMSE": 4.84,
+            "Bias": 0.456,
+            "SD of tomorrow's TMAX": 11.312,
+            "Training stations": 2,
+            "Training rows": 33103
+          },
+          {
+            "state_code": "39",
+            "State": "South Dakota",
+            "Test rows": 8276,
+            "RMSE": 5.043,
+            "Bias": 0.018,
+            "SD of tomorrow's TMAX": 13.759,
+            "Training stations": 3,
+            "Training rows": 43721
+          }
+        ],
+        "RandomForestRegressor": [
+          {
+            "state_code": "08",
+            "State": "Florida",
+            "Test rows": 2723,
+            "RMSE": 2.359,
+            "Bias": 0.353,
+            "SD of tomorrow's TMAX": 5.015,
+            "Training stations": 1,
+            "Training rows": 16629
+          },
+          {
+            "state_code": "38",
+            "State": "South Carolina",
+            "Test rows": 2748,
+            "RMSE": 2.761,
+            "Bias": 0.179,
+            "SD of tomorrow's TMAX": 8.0,
+            "Training stations": 1,
+            "Training rows": 15908
+          },
+          {
+            "state_code": "02",
+            "State": "Arizona",
+            "Test rows": 17062,
+            "RMSE": 2.808,
+            "Bias": 0.399,
+            "SD of tomorrow's TMAX": 9.838,
+            "Training stations": 7,
+            "Training rows": 84984
+          },
+          {
+            "state_code": "35",
+            "State": "Oregon",
+            "Test rows": 11911,
+            "RMSE": 2.911,
+            "Bias": -0.082,
+            "SD of tomorrow's TMAX": 9.082,
+            "Training stations": 5,
+            "Training rows": 77341
+          },
+          {
+            "state_code": "45",
+            "State": "Washington",
+            "Test rows": 3866,
+            "RMSE": 2.999,
+            "Bias": -0.269,
+            "SD of tomorrow's TMAX": 9.276,
+            "Training stations": 2,
+            "Training rows": 32175
+          },
+          {
+            "state_code": "04",
+            "State": "California",
+            "Test rows": 30998,
+            "RMSE": 3.056,
+            "Bias": 0.391,
+            "SD of tomorrow's TMAX": 8.918,
+            "Training stations": 14,
+            "Training rows": 177435
+          },
+          {
+            "state_code": "42",
+            "State": "Utah",
+            "Test rows": 8820,
+            "RMSE": 3.167,
+            "Bias": 0.38,
+            "SD of tomorrow's TMAX": 12.004,
+            "Training stations": 4,
+            "Training rows": 56217
+          },
+          {
+            "state_code": "10",
+            "State": "Idaho",
+            "Test rows": 10846,
+            "RMSE": 3.199,
+            "Bias": 0.189,
+            "SD of tomorrow's TMAX": 12.272,
+            "Training stations": 4,
+            "Training rows": 62284
+          },
+          {
+            "state_code": "01",
+            "State": "Alabama",
+            "Test rows": 5407,
+            "RMSE": 3.302,
+            "Bias": 0.833,
+            "SD of tomorrow's TMAX": 8.224,
+            "Training stations": 3,
+            "Training rows": 34991
+          },
+          {
+            "state_code": "03",
+            "State": "Arkansas",
+            "Test rows": 4663,
+            "RMSE": 3.339,
+            "Bias": 0.196,
+            "SD of tomorrow's TMAX": 9.363,
+            "Training stations": 2,
+            "Training rows": 32252
+          },
+          {
+            "state_code": "09",
+            "State": "Georgia",
+            "Test rows": 2814,
+            "RMSE": 3.354,
+            "Bias": 0.868,
+            "SD of tomorrow's TMAX": 7.816,
+            "Training stations": 1,
+            "Training rows": 5103
+          },
+          {
+            "state_code": "44",
+            "State": "Virginia",
+            "Test rows": 5106,
+            "RMSE": 3.373,
+            "Bias": 0.144,
+            "SD of tomorrow's TMAX": 9.014,
+            "Training stations": 2,
+            "Training rows": 28854
+          },
+          {
+            "state_code": "40",
+            "State": "Tennessee",
+            "Test rows": 14471,
+            "RMSE": 3.416,
+            "Bias": 0.493,
+            "SD of tomorrow's TMAX": 9.088,
+            "Training stations": 6,
+            "Training rows": 96053
+          },
+          {
+            "state_code": "31",
+            "State": "North Carolina",
+            "Test rows": 10682,
+            "RMSE": 3.425,
+            "Bias": 0.417,
+            "SD of tomorrow's TMAX": 8.421,
+            "Training stations": 4,
+            "Training rows": 45778
+          },
+          {
+            "state_code": "20",
+            "State": "Michigan",
+            "Test rows": 10618,
+            "RMSE": 3.468,
+            "Bias": -0.276,
+            "SD of tomorrow's TMAX": 11.75,
+            "Training stations": 5,
+            "Training rows": 73278
+          },
+          {
+            "state_code": "29",
+            "State": "New Mexico",
+            "Test rows": 3903,
+            "RMSE": 3.547,
+            "Bias": 0.275,
+            "SD of tomorrow's TMAX": 10.214,
+            "Training stations": 2,
+            "Training rows": 30947
+          },
+          {
+            "state_code": "47",
+            "State": "Wisconsin",
+            "Test rows": 12520,
+            "RMSE": 3.562,
+            "Bias": -0.311,
+            "SD of tomorrow's TMAX": 12.139,
+            "Training stations": 6,
+            "Training rows": 83097
+          },
+          {
+            "state_code": "05",
+            "State": "Colorado",
+            "Test rows": 18738,
+            "RMSE": 3.628,
+            "Bias": 0.307,
+            "SD of tomorrow's TMAX": 10.765,
+            "Training stations": 8,
+            "Training rows": 115743
+          },
+          {
+            "state_code": "22",
+            "State": "Mississippi",
+            "Test rows": 1994,
+            "RMSE": 3.638,
+            "Bias": 0.996,
+            "SD of tomorrow's TMAX": 9.075,
+            "Training stations": 1,
+            "Training rows": 16619
+          },
+          {
+            "state_code": "06",
+            "State": "Connecticut",
+            "Test rows": 3843,
+            "RMSE": 3.734,
+            "Bias": -0.203,
+            "SD of tomorrow's TMAX": 10.834,
+            "Training stations": 2,
+            "Training rows": 17999
+          },
+          {
+            "state_code": "33",
+            "State": "Ohio",
+            "Test rows": 3454,
+            "RMSE": 3.738,
+            "Bias": 0.276,
+            "SD of tomorrow's TMAX": 11.11,
+            "Training stations": 4,
+            "Training rows": 56994
+          },
+          {
+            "state_code": "17",
+            "State": "Maine",
+            "Test rows": 2569,
+            "RMSE": 3.768,
+            "Bias": -0.172,
+            "SD of tomorrow's TMAX": 11.144,
+            "Training stations": 1,
+            "Training rows": 16516
+          },
+          {
+            "state_code": "12",
+            "State": "Indiana",
+            "Test rows": 5304,
+            "RMSE": 3.776,
+            "Bias": -0.015,
+            "SD of tomorrow's TMAX": 11.59,
+            "Training stations": 2,
+            "Training rows": 33070
+          },
+          {
+            "state_code": "30",
+            "State": "New York",
+            "Test rows": 11599,
+            "RMSE": 3.844,
+            "Bias": -0.05,
+            "SD of tomorrow's TMAX": 11.148,
+            "Training stations": 7,
+            "Training rows": 46935
+          },
+          {
+            "state_code": "11",
+            "State": "Illinois",
+            "Test rows": 13738,
+            "RMSE": 3.893,
+            "Bias": 0.055,
+            "SD of tomorrow's TMAX": 11.827,
+            "Training stations": 6,
+            "Training rows": 38973
+          },
+          {
+            "state_code": "50",
+            "State": "Alaska",
+            "Test rows": 4307,
+            "RMSE": 3.923,
+            "Bias": -0.358,
+            "SD of tomorrow's TMAX": 13.659,
+            "Training stations": 2,
+            "Training rows": 29473
+          },
+          {
+            "state_code": "36",
+            "State": "Pennsylvania",
+            "Test rows": 11176,
+            "RMSE": 3.941,
+            "Bias": 0.429,
+            "SD of tomorrow's TMAX": 10.499,
+            "Training stations": 4,
+            "Training rows": 51066
+          },
+          {
+            "state_code": "OTHER",
+            "State": "other networks",
+            "Test rows": 82302,
+            "RMSE": 3.943,
+            "Bias": 0.055,
+            "SD of tomorrow's TMAX": 11.97,
+            "Training stations": 30,
+            "Training rows": 474924
+          },
+          {
+            "state_code": "21",
+            "State": "Minnesota",
+            "Test rows": 8623,
+            "RMSE": 4.042,
+            "Bias": -0.622,
+            "SD of tomorrow's TMAX": 13.491,
+            "Training stations": 4,
+            "Training rows": 53751
+          },
+          {
+            "state_code": "23",
+            "State": "Missouri",
+            "Test rows": 13659,
+            "RMSE": 4.051,
+            "Bias": 0.339,
+            "SD of tomorrow's TMAX": 11.133,
+            "Training stations": 6,
+            "Training rows": 77112
+          },
+          {
+            "state_code": "13",
+            "State": "Iowa",
+            "Test rows": 12340,
+            "RMSE": 4.115,
+            "Bias": -0.032,
+            "SD of tomorrow's TMAX": 12.749,
+            "Training stations": 5,
+            "Training rows": 81381
+          },
+          {
+            "state_code": "48",
+            "State": "Wyoming",
+            "Test rows": 24082,
+            "RMSE": 4.176,
+            "Bias": 0.007,
+            "SD of tomorrow's TMAX": 12.314,
+            "Training stations": 9,
+            "Training rows": 129165
+          },
+          {
+            "state_code": "41",
+            "State": "Texas",
+            "Test rows": 15593,
+            "RMSE": 4.296,
+            "Bias": 0.851,
+            "SD of tomorrow's TMAX": 9.322,
+            "Training stations": 6,
+            "Training rows": 88707
+          },
+          {
+            "state_code": "24",
+            "State": "Montana",
+            "Test rows": 7117,
+            "RMSE": 4.595,
+            "Bias": -0.64,
+            "SD of tomorrow's TMAX": 12.468,
+            "Training stations": 3,
+            "Training rows": 44323
+          },
+          {
+            "state_code": "25",
+            "State": "Nebraska",
+            "Test rows": 13304,
+            "RMSE": 4.697,
+            "Bias": 0.237,
+            "SD of tomorrow's TMAX": 12.565,
+            "Training stations": 5,
+            "Training rows": 80855
+          },
+          {
+            "state_code": "32",
+            "State": "North Dakota",
+            "Test rows": 7075,
+            "RMSE": 4.8,
+            "Bias": -0.441,
+            "SD of tomorrow's TMAX": 14.376,
+            "Training stations": 3,
+            "Training rows": 42428
+          },
+          {
+            "state_code": "14",
+            "State": "Kansas",
+            "Test rows": 5537,
+            "RMSE": 4.897,
+            "Bias": 0.907,
+            "SD of tomorrow's TMAX": 11.312,
+            "Training stations": 2,
+            "Training rows": 33103
+          },
+          {
+            "state_code": "39",
+            "State": "South Dakota",
+            "Test rows": 8276,
+            "RMSE": 4.986,
+            "Bias": 0.125,
+            "SD of tomorrow's TMAX": 13.759,
+            "Training stations": 3,
+            "Training rows": 43721
+          }
+        ]
+      },
+      "rank_correlations": {
+        "GBTRegressor": {
+          "stations_vs_rmse": 0.175,
+          "weather_swing_vs_rmse": 0.729,
+          "worst_over_best_rmse": 2.03
+        },
+        "RandomForestRegressor": {
+          "stations_vs_rmse": 0.176,
+          "weather_swing_vs_rmse": 0.7,
+          "worst_over_best_rmse": 2.11
+        }
+      },
+      "extremes": [
+        {
+          "Model": "GBTRegressor",
+          "Days": "Tomorrow >= 35 deg C",
+          "Test days": 18647,
+          "Bias (actual - forecast, deg C)": 1.939,
+          "Bias on all days": 0.084
+        },
+        {
+          "Model": "GBTRegressor",
+          "Days": "Tomorrow >= 32 deg C",
+          "Test days": 45870,
+          "Bias (actual - forecast, deg C)": 1.682,
+          "Bias on all days": 0.084
+        },
+        {
+          "Model": "GBTRegressor",
+          "Days": "Tomorrow <= 0 deg C",
+          "Test days": 37037,
+          "Bias (actual - forecast, deg C)": -2.706,
+          "Bias on all days": 0.084
+        },
+        {
+          "Model": "GBTRegressor",
+          "Days": "Tomorrow <= -10 deg C",
+          "Test days": 6086,
+          "Bias (actual - forecast, deg C)": -5.409,
+          "Bias on all days": 0.084
+        },
+        {
+          "Model": "RandomForestRegressor",
+          "Days": "Tomorrow >= 35 deg C",
+          "Test days": 18647,
+          "Bias (actual - forecast, deg C)": 2.21,
+          "Bias on all days": 0.155
+        },
+        {
+          "Model": "RandomForestRegressor",
+          "Days": "Tomorrow >= 32 deg C",
+          "Test days": 45870,
+          "Bias (actual - forecast, deg C)": 1.861,
+          "Bias on all days": 0.155
+        },
+        {
+          "Model": "RandomForestRegressor",
+          "Days": "Tomorrow <= 0 deg C",
+          "Test days": 37037,
+          "Bias (actual - forecast, deg C)": -2.779,
+          "Bias on all days": 0.155
+        },
+        {
+          "Model": "RandomForestRegressor",
+          "Days": "Tomorrow <= -10 deg C",
+          "Test days": 6086,
+          "Bias (actual - forecast, deg C)": -5.496,
+          "Bias on all days": 0.155
+        }
+      ]
+    },
+    "named_bias_risk": "Extreme-weather and regional bias: on test days >= 35 deg C the forecast is +1.9 deg C too cold and on days <= -10 deg C 5.4 deg C too warm; state RMSE ranges from 2.49 (Florida) to 5.04 deg C (South Dakota), following weather swing (rank corr. +0.73) more than station count (+0.17)"
   }
 }

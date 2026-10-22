@@ -1,0 +1,9 @@
+Model,Days,Test days,"Bias (actual - forecast, deg C)",Bias on all days
+GBTRegressor,Tomorrow >= 35 deg C,18647,1.939,0.084
+GBTRegressor,Tomorrow >= 32 deg C,45870,1.682,0.084
+GBTRegressor,Tomorrow <= 0 deg C,37037,-2.706,0.084
+GBTRegressor,Tomorrow <= -10 deg C,6086,-5.409,0.084
+RandomForestRegressor,Tomorrow >= 35 deg C,18647,2.21,0.155
+RandomForestRegressor,Tomorrow >= 32 deg C,45870,1.861,0.155
+RandomForestRegressor,Tomorrow <= 0 deg C,37037,-2.779,0.155
+RandomForestRegressor,Tomorrow <= -10 deg C,6086,-5.496,0.155
