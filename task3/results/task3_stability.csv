@@ -1,0 +1,5 @@
+Model,Perturbation applied,Δ RMSE (°C),Δ R²,Rank
+FMRegressor,Sensor noise 10% of SD (seed 42),0.0288,-0.0017,1
+RandomForestRegressor,Sensor noise 10% of SD (seed 42),0.0724,-0.0039,2
+LinearRegression,Sensor noise 10% of SD (seed 42),0.0773,-0.0044,3
+GBTRegressor,Sensor noise 10% of SD (seed 42),0.0856,-0.0047,4
