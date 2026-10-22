@@ -153,9 +153,49 @@ Random Forest crashed with Java OutOfMemoryError: maxMemoryInMB=512 across 12 ta
 
 \- \- \- \- \- \- \- \- \- \-
 
+Notebook: [`notebooks/task3.ipynb`](notebooks/task3.ipynb) · results in `task3/results/` and `results/task3.json` · figures in `task3/figures/`
 
+### **3.1 Spark UI Interpretation and Optimisation**
 
-/\*\* Please add here overview of Your Task3 \*\*/
+| **Change made** | **Setting** | **Rationale** | **Stage** | **Before (s)** | **After (s)** |
+|---|---|---|---|---|---|
+| Persist scored test set | MEMORY_AND_DISK, 4 columns | 6 of 8 jobs re-scored all test rows | test scan + score | 20.4 | 7.4 |
+| Repartition before caching | 11 → 24 partitions | 11 uneven partitions, 12 cores | GBT retrain passes | 103.6 | 126.6 |
+| Parallel CV fits | parallelism 1 → 2 | cores only 48% busy | CrossValidator.fit | 98.3 | 94.4 |
+
+The baseline timeline (Table 3.1b) showed recomputation: 93% of stage time was the same scan and 60-tree scoring, repeated in 6 jobs because Spark is lazy. Persisting 4.8 MB made evaluation 2.8× faster. Skew was mild (longest task 1.15× the median), so repartitioning's 231 MB shuffle cost more than it saved. No spill was found; two parallel fits gained only 4%.
+
+![Fig. 3.1: before/after times and the task timeline of the longest stage](<task3/figures/task3_optimisation.png>)
+
+### **3.2 Stability Analysis**
+
+| **Model** | **Perturbation applied** | **Δ RMSE (°C)** | **Δ R²** | **Rank** |
+|---|---|---|---|---|
+| FMRegressor | 10% sensor noise | +0.029 | −0.0017 | 1 |
+| RandomForestRegressor | same | +0.072 | −0.0039 | 2 |
+| LinearRegression | same | +0.077 | −0.0044 | 3 |
+| GBTRegressor | same | +0.086 | −0.0047 | 4 |
+
+GBT is least stable: 80% of its split importance is on today's TMAX, so one wrong reading moves many trees at once (Table 3.2c). Random Forest spreads its splits, so errors partly cancel. FM is stable only because its small weights under-fit. Random Forest keeps the lowest noisy RMSE (3.865 °C), so I would deploy it.
+
+![Fig. 3.2: delta RMSE per perturbation and how far forecasts move](<task3/figures/task3_stability.png>)
+
+### **3.3 Explainability and Fairness**
+
+| **Item** | **Result** |
+|---|---|
+| Method used | SHAP (exact TreeSHAP on the saved Spark trees) |
+| Model explained | GBTRegressor |
+| Top five features | 1. TMAX 2. TMAX_roll7 3. doy_cos 4. TOBS 5. PRCP |
+| Named bias risk | Extreme-weather bias, worst in Great Plains states |
+
+TMAX carries 66% of SHAP weight; its effect flattens at the extremes (Fig. 3.3c) because trees average training days and records are rare. Days ≥35 °C are forecast 1.9 °C too cold and days ≤−10 °C 5.4 °C too warm. State error follows weather swing (ρ = 0.73), not station count (ρ = 0.17). Mitigation: add pressure and front data and weight extreme days; the limit is that extremes stay rare.
+
+![Fig. 3.3: SHAP importance, top-five beeswarm and the TMAX effect](<task3/figures/task3_shap.png>)
+
+**Task 3 Process Note**
+
+Repartitioning to 24 partitions made GBT retraining 22% slower: skew was only 1.15× and the 231 MB shuffle cost more. I kept 11 partitions and persisted the scored test set.
 
 
 
