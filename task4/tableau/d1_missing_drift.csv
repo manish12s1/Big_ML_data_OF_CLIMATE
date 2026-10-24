@@ -1,0 +1,15 @@
+Feature,Train missing (%),Test missing (%),Change (points)
+SNOW,9.25,22.11,12.86
+SNWD,11.74,23.25,11.51
+TOBS,21.77,25.97,4.2
+TMAX_lag2,1.71,2.21,0.5
+PRCP,1.08,1.56,0.48
+TMAX_lag1,0.89,1.16,0.27
+TMIN_roll7,0.04,0.06,0.02
+TMIN,0.27,0.29,0.02
+DTR,0.27,0.29,0.02
+TMAX,0.0,0.0,0.0
+TMAX_roll7,0.0,0.0,0.0
+doy_sin,0.0,0.0,0.0
+doy_cos,0.0,0.0,0.0
+YEAR_f,0.0,0.0,0.0

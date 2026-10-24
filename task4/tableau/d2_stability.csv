@@ -1,0 +1,21 @@
+Model,Perturbation,Clean RMSE,Perturbed RMSE,Delta RMSE,Delta R2,Mean |forecast change| (deg C),Days moved > 1 deg C (%)
+LR,Sensor noise 10% of SD (seed 42),3.974,4.0513,0.0773,-0.0044,0.636,21.0
+RF,Sensor noise 10% of SD (seed 42),3.7924,3.8648,0.0724,-0.0039,0.644,23.0
+FM,Sensor noise 10% of SD (seed 42),4.0822,4.111,0.0288,-0.0017,0.389,4.2
+GBT,Sensor noise 10% of SD (seed 42),3.8529,3.9385,0.0856,-0.0047,0.798,28.6
+LR,Sensor noise 10% of SD (seed 7),3.974,4.0529,0.0789,-0.0044,0.639,21.2
+RF,Sensor noise 10% of SD (seed 7),3.7924,3.8654,0.073,-0.0039,0.647,23.2
+FM,Sensor noise 10% of SD (seed 7),4.0822,4.1123,0.03,-0.0017,0.39,4.2
+GBT,Sensor noise 10% of SD (seed 7),3.8529,3.9407,0.0878,-0.0048,0.798,28.5
+LR,Sensor noise 5% of SD,3.974,3.993,0.0189,-0.0011,0.318,1.2
+RF,Sensor noise 5% of SD,3.7924,3.8127,0.0202,-0.0011,0.359,8.1
+FM,Sensor noise 5% of SD,4.0822,4.0893,0.0071,-0.0004,0.195,0.0
+GBT,Sensor noise 5% of SD,3.8529,3.8751,0.0222,-0.0012,0.427,14.5
+LR,10% of readings missing,3.974,4.7591,0.785,-0.0482,1.104,26.0
+RF,10% of readings missing,3.7924,4.3717,0.5792,-0.0332,0.818,18.9
+FM,10% of readings missing,4.0822,4.4475,0.3652,-0.0219,0.946,30.9
+GBT,10% of readings missing,3.8529,4.5774,0.7245,-0.0429,0.87,18.0
+LR,TMAX +1 deg C only (check),3.974,4.0196,0.0456,-0.0026,0.593,0.0
+RF,TMAX +1 deg C only (check),3.7924,3.8104,0.018,-0.001,0.558,13.3
+FM,TMAX +1 deg C only (check),4.0822,4.0872,0.0049,-0.0003,0.212,0.0
+GBT,TMAX +1 deg C only (check),3.8529,3.9016,0.0487,-0.0027,0.673,26.0

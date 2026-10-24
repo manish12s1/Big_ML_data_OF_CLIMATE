@@ -1,0 +1,9 @@
+Stage,Check,Result,Detail
+Task 2 input validation,Row counts match Task 1,PASS,"train 2,555,512 (Task 1: 2,555,512), test 433,788 (Task 1: 433,788)"
+Task 2 input validation,Training years end before test years start,PASS,"train 1970-2015, test 2016-2023"
+Task 2 input validation,No duplicate station-days (train),PASS,"0 duplicate (ID, date) rows"
+Task 2 input validation,No duplicate station-days (test),PASS,"0 duplicate (ID, date) rows"
+Task 2 input validation,Target has no missing values,PASS,0 missing
+Task 2 input validation,Target inside Task 1's valid range (-60 to 60 deg C),PASS,"min -53.9, max 50.0 deg C"
+Task 2 input validation,No target or future column among the features,PASS,15 feature columns checked
+Task 2 input validation,Unseen categories in test are handled,PASS,"40 state_code values in train, 38 in test, 0 unseen (StringIndexer handleInvalid='keep')"

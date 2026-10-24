@@ -1,0 +1,6 @@
+Step,Stage,Rows
+1,Raw climate.csv (one row per station-month-element),17097453
+2,"Station-day rows (5% station sample, reshaped)",2989300
+3,Training rows 1970-2015,2555512
+4,Test rows 2016-2023,433788
+5,Cross-validation tuning sample (10%),255855

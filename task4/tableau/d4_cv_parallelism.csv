@@ -1,0 +1,4 @@
+Parallel CV fits,Wall time (s),Core use (%),Faster than 1 fit (%)
+1,98.29,47.6,0.0
+2,94.4,64.9,4.0
+4,71.6,81.0,27.2

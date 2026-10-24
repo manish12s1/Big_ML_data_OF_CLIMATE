@@ -1,0 +1,9 @@
+Training share (%),Rows,Model,Fit time (s),Core-seconds,Time vs smallest run (x),Data vs smallest run (x)
+10,256245,LR (Task 2 settings),12.25,147.0,1.0,1.0
+10,256245,"GBT (Task 2 settings, 3 trees)",19.86,238.3,1.0,1.0
+25,638975,LR (Task 2 settings),18.98,227.7,1.55,2.49
+25,638975,"GBT (Task 2 settings, 3 trees)",30.65,367.8,1.54,2.49
+50,1279229,LR (Task 2 settings),27.9,334.8,2.28,4.99
+50,1279229,"GBT (Task 2 settings, 3 trees)",50.29,603.5,2.53,4.99
+100,2555512,LR (Task 2 settings),49.11,589.3,4.01,9.97
+100,2555512,"GBT (Task 2 settings, 3 trees)",91.63,1099.5,4.61,9.97

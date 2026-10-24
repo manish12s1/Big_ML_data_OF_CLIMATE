@@ -1,0 +1,23 @@
+Task,Step,Model,Seconds,Core-seconds
+Task 1,full scan + count of climate.csv (17.1 M rows),-,5.34,64.1
+Task 1,"feature build (station-day reshape, lags, rolling means)",-,159.37,1912.4
+Task 1,preprocessing pipeline fit,-,35.55,426.6
+Task 2,cross-validation tuning,LR,160.98,1931.8
+Task 2,final fit (2.56 M rows),LR,49.02,588.2
+Task 2,"inference (433,788 rows)",LR,2.08,25.0
+Task 2,cross-validation tuning,RF,716.59,8599.1
+Task 2,final fit (2.56 M rows),RF,655.1,7861.2
+Task 2,"inference (433,788 rows)",RF,10.71,128.5
+Task 2,cross-validation tuning,FM,719.72,8636.6
+Task 2,final fit (2.56 M rows),FM,1082.62,12991.4
+Task 2,"inference (433,788 rows)",FM,3.05,36.6
+Task 2,cross-validation tuning,GBT,1100.12,13201.4
+Task 2,final fit (2.56 M rows),GBT,661.76,7941.1
+Task 2,"inference (433,788 rows)",GBT,3.15,37.8
+Task 3,Persist the scored test set - before,-,20.45,245.4
+Task 3,Persist the scored test set - after,-,7.35,88.2
+Task 3,Repartition before caching - before,-,103.63,1243.6
+Task 3,Repartition before caching - after,-,126.64,1519.7
+Task 3,Fit CV combinations in parallel - before,-,98.29,1179.5
+Task 3,Fit CV combinations in parallel - after,-,94.4,1132.8
+Task 3,"SHAP for 5,143 test days",GBT,10.7,128.4

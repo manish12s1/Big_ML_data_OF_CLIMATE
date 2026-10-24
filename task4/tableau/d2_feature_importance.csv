@@ -1,0 +1,76 @@
+Model,Feature,Method,Importance,Share within model and method (%),Rank
+GBT,TMAX,Mean |SHAP| (deg C),7.9205,66.2748,1
+GBT,TMAX_roll7,Mean |SHAP| (deg C),0.8116,6.7911,2
+GBT,doy_cos,Mean |SHAP| (deg C),0.7587,6.3484,3
+GBT,TOBS,Mean |SHAP| (deg C),0.7083,5.9267,4
+GBT,PRCP,Mean |SHAP| (deg C),0.6268,5.2447,5
+GBT,TMAX_lag1,Mean |SHAP| (deg C),0.2577,2.1563,6
+GBT,state_code,Mean |SHAP| (deg C),0.2321,1.9421,7
+GBT,DTR,Mean |SHAP| (deg C),0.2115,1.7697,8
+GBT,YEAR_f,Mean |SHAP| (deg C),0.1075,0.8995,9
+GBT,SNOW,Mean |SHAP| (deg C),0.0951,0.7957,10
+GBT,TMIN,Mean |SHAP| (deg C),0.0918,0.7681,11
+GBT,doy_sin,Mean |SHAP| (deg C),0.0555,0.4644,12
+GBT,SNWD,Mean |SHAP| (deg C),0.0261,0.2184,13
+GBT,TMIN_roll7,Mean |SHAP| (deg C),0.0252,0.2109,14
+GBT,TMAX_lag2,Mean |SHAP| (deg C),0.0226,0.1891,15
+LR,TMAX,|standardised weight|,7.079,37.0117,1
+LR,TMIN,|standardised weight|,1.187,6.2061,5
+LR,TOBS,|standardised weight|,1.0156,5.3101,7
+LR,PRCP,|standardised weight|,0.3917,2.0481,9
+LR,SNOW,|standardised weight|,0.2936,1.5349,11
+LR,SNWD,|standardised weight|,0.0117,0.0613,15
+LR,TMAX_lag1,|standardised weight|,1.5801,8.2613,4
+LR,TMAX_lag2,|standardised weight|,0.3427,1.792,10
+LR,TMAX_roll7,|standardised weight|,2.9188,15.2608,2
+LR,TMIN_roll7,|standardised weight|,0.5232,2.7356,8
+LR,DTR,|standardised weight|,0.1756,0.9183,12
+LR,doy_sin,|standardised weight|,0.1145,0.5986,13
+LR,doy_cos,|standardised weight|,1.1453,5.9879,6
+LR,YEAR_f,|standardised weight|,0.0831,0.4343,14
+LR,state_code,|standardised weight|,2.2644,11.839,3
+RF,TMAX,Spark split importance,0.4152,41.5169,1
+RF,TMIN,Spark split importance,0.0924,9.2437,4
+RF,TOBS,Spark split importance,0.02,2.0018,8
+RF,PRCP,Spark split importance,0.0058,0.5791,10
+RF,SNOW,Spark split importance,0.0048,0.4804,12
+RF,SNWD,Spark split importance,0.0121,1.2089,9
+RF,TMAX_lag1,Spark split importance,0.1015,10.1509,3
+RF,TMAX_lag2,Spark split importance,0.0689,6.8924,5
+RF,TMAX_roll7,Spark split importance,0.2165,21.654,2
+RF,TMIN_roll7,Spark split importance,0.0207,2.0702,7
+RF,DTR,Spark split importance,0.0049,0.4924,11
+RF,doy_sin,Spark split importance,0.001,0.1042,14
+RF,doy_cos,Spark split importance,0.0333,3.3303,6
+RF,YEAR_f,Spark split importance,0.0002,0.0167,15
+RF,state_code,Spark split importance,0.0026,0.2582,13
+FM,TMAX,|linear weight| (no factor terms),0.1208,5.0405,3
+FM,TMIN,|linear weight| (no factor terms),0.1432,5.9755,2
+FM,TOBS,|linear weight| (no factor terms),0.1012,4.2215,6
+FM,PRCP,|linear weight| (no factor terms),0.019,0.7918,15
+FM,SNOW,|linear weight| (no factor terms),0.0479,1.9987,13
+FM,SNWD,|linear weight| (no factor terms),0.0499,2.0822,12
+FM,TMAX_lag1,|linear weight| (no factor terms),0.0732,3.0528,9
+FM,TMAX_lag2,|linear weight| (no factor terms),0.0642,2.679,10
+FM,TMAX_roll7,|linear weight| (no factor terms),0.0808,3.3702,8
+FM,TMIN_roll7,|linear weight| (no factor terms),0.0926,3.8629,7
+FM,DTR,|linear weight| (no factor terms),0.1017,4.243,4
+FM,doy_sin,|linear weight| (no factor terms),0.0506,2.1115,11
+FM,doy_cos,|linear weight| (no factor terms),0.1017,4.2424,5
+FM,YEAR_f,|linear weight| (no factor terms),0.0314,1.3081,14
+FM,state_code,|linear weight| (no factor terms),1.3187,55.0201,1
+GBT,TMAX,Spark split importance,0.7962,79.6205,1
+GBT,TMIN,Spark split importance,0.005,0.5038,9
+GBT,TOBS,Spark split importance,0.042,4.1989,2
+GBT,PRCP,Spark split importance,0.0303,3.0338,4
+GBT,SNOW,Spark split importance,0.0035,0.3492,10
+GBT,SNWD,Spark split importance,0.0009,0.0884,14
+GBT,TMAX_lag1,Spark split importance,0.007,0.7001,8
+GBT,TMAX_lag2,Spark split importance,0.0005,0.0461,15
+GBT,TMAX_roll7,Spark split importance,0.0272,2.7209,6
+GBT,TMIN_roll7,Spark split importance,0.0028,0.2767,12
+GBT,DTR,Spark split importance,0.0328,3.2792,3
+GBT,doy_sin,Spark split importance,0.003,0.2955,11
+GBT,doy_cos,Spark split importance,0.0301,3.0095,5
+GBT,YEAR_f,Spark split importance,0.0012,0.1151,13
+GBT,state_code,Spark split importance,0.0176,1.7622,7
