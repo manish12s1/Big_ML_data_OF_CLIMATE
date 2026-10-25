@@ -1,4 +1,4 @@
- ### **7006SCN2627SEPNOV - Machine Learning and Big Data**
+### **7006SCN2627SEPNOV - Machine Learning and Big Data**
 
 ### **Student Information**
 
@@ -90,7 +90,6 @@ VectorAssembler fails on nulls, so imputing comes first. The encoder needs the S
   ![Pipeline construction](<figures/Screenshot 2026-10-18 001348.png>) 
    ![EP 1](<figures/Screenshot 2026-10-18 001336-1.png>)
    ![EP1](<figures/Screenshot 2026-10-18 001358.png>) 
-   
 **Task 1 Process Note**
 
 Writing bronze Parquet failed on Windows because HADOOP_HOME was unset. I installed winutils.exe and hadoop.dll, set HADOOP_HOME before starting Spark, and the 2.54 GiB CSV is now parsed only once. 
