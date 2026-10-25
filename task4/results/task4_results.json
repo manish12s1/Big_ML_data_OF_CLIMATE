@@ -1,0 +1,471 @@
+{
+  "task": 4,
+  "notebook": "notebooks/task4.ipynb",
+  "quick_test": false,
+  "student": {
+    "student_name": "Manish saini",
+    "student_email": "sainim10@coventry.ac.uk",
+    "sid": "17142113"
+  },
+  "pool_reference": "112",
+  "problem_type": "regression",
+  "target_col": "label_TMAX_next",
+  "input_contract": [
+    "results/task1.json",
+    "results/task2.json",
+    "results/task3.json"
+  ],
+  "tableau_public_url": null,
+  "dashboards": [
+    {
+      "id": "D1",
+      "name": "Data quality & pipeline monitoring",
+      "tables": [
+        "d1_pipeline_funnel",
+        "d1_rows_by_year",
+        "d1_missing_by_year",
+        "d1_missing_drift",
+        "d1_pipeline_checks"
+      ]
+    },
+    {
+      "id": "D2",
+      "name": "Model performance & feature importance",
+      "tables": [
+        "d2_model_metrics",
+        "d2_predictions_sample",
+        "d2_feature_importance",
+        "d2_stability"
+      ]
+    },
+    {
+      "id": "D3",
+      "name": "Business insights",
+      "tables": [
+        "d3_error_by_state",
+        "d3_error_by_month",
+        "d3_bias_by_temperature_band",
+        "d3_warning_performance"
+      ]
+    },
+    {
+      "id": "D4",
+      "name": "Scalability & cost analysis",
+      "tables": [
+        "d4_compute_log",
+        "d4_cv_parallelism",
+        "d4_accuracy_vs_cost",
+        "d4_scaling"
+      ]
+    }
+  ],
+  "n_dashboards": 4,
+  "exports": [
+    {
+      "Dashboard": "D1",
+      "Table / sheet": "d1_pipeline_funnel",
+      "Rows": 5,
+      "Columns": 3,
+      "CSV": "task4/tableau/d1_pipeline_funnel.csv"
+    },
+    {
+      "Dashboard": "D1",
+      "Table / sheet": "d1_rows_by_year",
+      "Rows": 54,
+      "Columns": 4,
+      "CSV": "task4/tableau/d1_rows_by_year.csv"
+    },
+    {
+      "Dashboard": "D1",
+      "Table / sheet": "d1_missing_by_year",
+      "Rows": 756,
+      "Columns": 5,
+      "CSV": "task4/tableau/d1_missing_by_year.csv"
+    },
+    {
+      "Dashboard": "D1",
+      "Table / sheet": "d1_missing_drift",
+      "Rows": 14,
+      "Columns": 4,
+      "CSV": "task4/tableau/d1_missing_drift.csv"
+    },
+    {
+      "Dashboard": "D1",
+      "Table / sheet": "d1_pipeline_checks",
+      "Rows": 8,
+      "Columns": 4,
+      "CSV": "task4/tableau/d1_pipeline_checks.csv"
+    },
+    {
+      "Dashboard": "D2",
+      "Table / sheet": "d2_model_metrics",
+      "Rows": 5,
+      "Columns": 14,
+      "CSV": "task4/tableau/d2_model_metrics.csv"
+    },
+    {
+      "Dashboard": "D2",
+      "Table / sheet": "d2_predictions_sample",
+      "Rows": 20572,
+      "Columns": 7,
+      "CSV": "task4/tableau/d2_predictions_sample.csv"
+    },
+    {
+      "Dashboard": "D2",
+      "Table / sheet": "d2_feature_importance",
+      "Rows": 75,
+      "Columns": 6,
+      "CSV": "task4/tableau/d2_feature_importance.csv"
+    },
+    {
+      "Dashboard": "D2",
+      "Table / sheet": "d2_stability",
+      "Rows": 20,
+      "Columns": 8,
+      "CSV": "task4/tableau/d2_stability.csv"
+    },
+    {
+      "Dashboard": "D3",
+      "Table / sheet": "d3_error_by_state",
+      "Rows": 190,
+      "Columns": 8,
+      "CSV": "task4/tableau/d3_error_by_state.csv"
+    },
+    {
+      "Dashboard": "D3",
+      "Table / sheet": "d3_error_by_month",
+      "Rows": 60,
+      "Columns": 7,
+      "CSV": "task4/tableau/d3_error_by_month.csv"
+    },
+    {
+      "Dashboard": "D3",
+      "Table / sheet": "d3_bias_by_temperature_band",
+      "Rows": 70,
+      "Columns": 7,
+      "CSV": "task4/tableau/d3_bias_by_temperature_band.csv"
+    },
+    {
+      "Dashboard": "D3",
+      "Table / sheet": "d3_warning_performance",
+      "Rows": 50,
+      "Columns": 11,
+      "CSV": "task4/tableau/d3_warning_performance.csv"
+    },
+    {
+      "Dashboard": "D4",
+      "Table / sheet": "d4_compute_log",
+      "Rows": 22,
+      "Columns": 5,
+      "CSV": "task4/tableau/d4_compute_log.csv"
+    },
+    {
+      "Dashboard": "D4",
+      "Table / sheet": "d4_cv_parallelism",
+      "Rows": 3,
+      "Columns": 4,
+      "CSV": "task4/tableau/d4_cv_parallelism.csv"
+    },
+    {
+      "Dashboard": "D4",
+      "Table / sheet": "d4_accuracy_vs_cost",
+      "Rows": 4,
+      "Columns": 7,
+      "CSV": "task4/tableau/d4_accuracy_vs_cost.csv"
+    },
+    {
+      "Dashboard": "D4",
+      "Table / sheet": "d4_scaling",
+      "Rows": 8,
+      "Columns": 7,
+      "CSV": "task4/tableau/d4_scaling.csv"
+    }
+  ],
+  "excel_workbook": "task4/tableau/task4_tableau_data.xlsx",
+  "contact_sheet": null,
+  "key_numbers": {
+    "heat_days_ge35": 18647,
+    "cold_days_le_minus10": 6086,
+    "by_model": {
+      "LR": {
+        "RMSE": 3.974,
+        "best_state": "Florida",
+        "best_state_rmse": 2.519,
+        "worst_state": "South Dakota",
+        "worst_state_rmse": 5.096,
+        "best_month": "Jul",
+        "best_month_rmse": 2.558,
+        "worst_month": "Feb",
+        "worst_month_rmse": 4.895,
+        "heat_trigger_35": {
+          "hit_rate_pct": 49.9,
+          "false_alarm_pct": 21.5
+        },
+        "heat_trigger_33": {
+          "hit_rate_pct": 78.4,
+          "false_alarm_pct": 45.1
+        },
+        "cold_trigger_-10": {
+          "hit_rate_pct": 43.7,
+          "false_alarm_pct": 23.7
+        },
+        "cold_trigger_-8": {
+          "hit_rate_pct": 58.2,
+          "false_alarm_pct": 35.1
+        }
+      },
+      "RF": {
+        "RMSE": 3.7924,
+        "best_state": "Florida",
+        "best_state_rmse": 2.359,
+        "worst_state": "South Dakota",
+        "worst_state_rmse": 4.986,
+        "best_month": "Jul",
+        "best_month_rmse": 2.485,
+        "worst_month": "Feb",
+        "worst_month_rmse": 4.661,
+        "heat_trigger_35": {
+          "hit_rate_pct": 51.9,
+          "false_alarm_pct": 16.4
+        },
+        "heat_trigger_33": {
+          "hit_rate_pct": 78.8,
+          "false_alarm_pct": 37.6
+        },
+        "cold_trigger_-10": {
+          "hit_rate_pct": 37.6,
+          "false_alarm_pct": 25.7
+        },
+        "cold_trigger_-8": {
+          "hit_rate_pct": 61.4,
+          "false_alarm_pct": 38.7
+        }
+      },
+      "FM": {
+        "RMSE": 4.0822,
+        "best_state": "Florida",
+        "best_state_rmse": 2.621,
+        "worst_state": "Kansas",
+        "worst_state_rmse": 5.161,
+        "best_month": "Jul",
+        "best_month_rmse": 2.7,
+        "worst_month": "Feb",
+        "worst_month_rmse": 5.073,
+        "heat_trigger_35": {
+          "hit_rate_pct": 55.6,
+          "false_alarm_pct": 29.6
+        },
+        "heat_trigger_33": {
+          "hit_rate_pct": 79.7,
+          "false_alarm_pct": 50.4
+        },
+        "cold_trigger_-10": {
+          "hit_rate_pct": 34.7,
+          "false_alarm_pct": 22.5
+        },
+        "cold_trigger_-8": {
+          "hit_rate_pct": 50.3,
+          "false_alarm_pct": 32.6
+        }
+      },
+      "GBT": {
+        "RMSE": 3.8529,
+        "best_state": "Florida",
+        "best_state_rmse": 2.487,
+        "worst_state": "South Dakota",
+        "worst_state_rmse": 5.043,
+        "best_month": "Jul",
+        "best_month_rmse": 2.526,
+        "worst_month": "Feb",
+        "worst_month_rmse": 4.688,
+        "heat_trigger_35": {
+          "hit_rate_pct": 57.6,
+          "false_alarm_pct": 19.7
+        },
+        "heat_trigger_33": {
+          "hit_rate_pct": 80.9,
+          "false_alarm_pct": 39.6
+        },
+        "cold_trigger_-10": {
+          "hit_rate_pct": 40.6,
+          "false_alarm_pct": 28.7
+        },
+        "cold_trigger_-8": {
+          "hit_rate_pct": 63.6,
+          "false_alarm_pct": 40.4
+        }
+      },
+      "Persistence": {
+        "RMSE": 4.3974,
+        "best_state": "Florida",
+        "best_state_rmse": 2.65,
+        "worst_state": "Kansas",
+        "worst_state_rmse": 5.792,
+        "best_month": "Jul",
+        "best_month_rmse": 2.73,
+        "worst_month": "Feb",
+        "worst_month_rmse": 5.49,
+        "heat_trigger_35": {
+          "hit_rate_pct": 70.6,
+          "false_alarm_pct": 29.4
+        },
+        "heat_trigger_33": {
+          "hit_rate_pct": 87.9,
+          "false_alarm_pct": 50.6
+        },
+        "cold_trigger_-10": {
+          "hit_rate_pct": 61.0,
+          "false_alarm_pct": 39.0
+        },
+        "cold_trigger_-8": {
+          "hit_rate_pct": 69.9,
+          "false_alarm_pct": 49.1
+        }
+      }
+    },
+    "missing_drift_top3": [
+      {
+        "Feature": "SNOW",
+        "Train missing (%)": 9.25,
+        "Test missing (%)": 22.11,
+        "Change (points)": 12.86
+      },
+      {
+        "Feature": "SNWD",
+        "Train missing (%)": 11.74,
+        "Test missing (%)": 23.25,
+        "Change (points)": 11.51
+      },
+      {
+        "Feature": "TOBS",
+        "Train missing (%)": 21.77,
+        "Test missing (%)": 25.97,
+        "Change (points)": 4.2
+      }
+    ],
+    "checks_passed": "8/8",
+    "cost_core_hours_tune_fit": {
+      "LR": 0.7,
+      "RF": 4.572,
+      "FM": 6.008,
+      "GBT": 5.873
+    },
+    "scaling": {
+      "LR (Task 2 settings)": {
+        "rows": [
+          256245,
+          638975,
+          1279229,
+          2555512
+        ],
+        "fit_s": [
+          12.25,
+          18.98,
+          27.9,
+          49.11
+        ],
+        "data_x": 9.97,
+        "time_x": 4.01
+      },
+      "GBT (Task 2 settings, 3 trees)": {
+        "rows": [
+          256245,
+          638975,
+          1279229,
+          2555512
+        ],
+        "fit_s": [
+          19.86,
+          30.65,
+          50.29,
+          91.63
+        ],
+        "data_x": 9.97,
+        "time_x": 4.61
+      }
+    }
+  },
+  "scaling": [
+    {
+      "Training share (%)": 10,
+      "Rows": 256245,
+      "Model": "LR (Task 2 settings)",
+      "Fit time (s)": 12.25,
+      "Core-seconds": 147.0,
+      "Time vs smallest run (x)": 1.0,
+      "Data vs smallest run (x)": 1.0
+    },
+    {
+      "Training share (%)": 10,
+      "Rows": 256245,
+      "Model": "GBT (Task 2 settings, 3 trees)",
+      "Fit time (s)": 19.86,
+      "Core-seconds": 238.3,
+      "Time vs smallest run (x)": 1.0,
+      "Data vs smallest run (x)": 1.0
+    },
+    {
+      "Training share (%)": 25,
+      "Rows": 638975,
+      "Model": "LR (Task 2 settings)",
+      "Fit time (s)": 18.98,
+      "Core-seconds": 227.7,
+      "Time vs smallest run (x)": 1.55,
+      "Data vs smallest run (x)": 2.49
+    },
+    {
+      "Training share (%)": 25,
+      "Rows": 638975,
+      "Model": "GBT (Task 2 settings, 3 trees)",
+      "Fit time (s)": 30.65,
+      "Core-seconds": 367.8,
+      "Time vs smallest run (x)": 1.54,
+      "Data vs smallest run (x)": 2.49
+    },
+    {
+      "Training share (%)": 50,
+      "Rows": 1279229,
+      "Model": "LR (Task 2 settings)",
+      "Fit time (s)": 27.9,
+      "Core-seconds": 334.8,
+      "Time vs smallest run (x)": 2.28,
+      "Data vs smallest run (x)": 4.99
+    },
+    {
+      "Training share (%)": 50,
+      "Rows": 1279229,
+      "Model": "GBT (Task 2 settings, 3 trees)",
+      "Fit time (s)": 50.29,
+      "Core-seconds": 603.5,
+      "Time vs smallest run (x)": 2.53,
+      "Data vs smallest run (x)": 4.99
+    },
+    {
+      "Training share (%)": 100,
+      "Rows": 2555512,
+      "Model": "LR (Task 2 settings)",
+      "Fit time (s)": 49.11,
+      "Core-seconds": 589.3,
+      "Time vs smallest run (x)": 4.01,
+      "Data vs smallest run (x)": 9.97
+    },
+    {
+      "Training share (%)": 100,
+      "Rows": 2555512,
+      "Model": "GBT (Task 2 settings, 3 trees)",
+      "Fit time (s)": 91.63,
+      "Core-seconds": 1099.5,
+      "Time vs smallest run (x)": 4.61,
+      "Data vs smallest run (x)": 9.97
+    }
+  ],
+  "executor_config": {
+    "spark_version": "4.2.0",
+    "master": "local[*]",
+    "cores": 12,
+    "driver_memory": "4g",
+    "os": "Windows-11-10.0.26300-SP0",
+    "python": "3.14.6"
+  },
+  "written_at": "2026-10-24 13:44:54"
+}

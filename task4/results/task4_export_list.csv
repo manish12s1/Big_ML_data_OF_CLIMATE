@@ -1,0 +1,18 @@
+Dashboard,Table / sheet,Rows,Columns,CSV
+D1,d1_pipeline_funnel,5,3,task4/tableau/d1_pipeline_funnel.csv
+D1,d1_rows_by_year,54,4,task4/tableau/d1_rows_by_year.csv
+D1,d1_missing_by_year,756,5,task4/tableau/d1_missing_by_year.csv
+D1,d1_missing_drift,14,4,task4/tableau/d1_missing_drift.csv
+D1,d1_pipeline_checks,8,4,task4/tableau/d1_pipeline_checks.csv
+D2,d2_model_metrics,5,14,task4/tableau/d2_model_metrics.csv
+D2,d2_predictions_sample,20572,7,task4/tableau/d2_predictions_sample.csv
+D2,d2_feature_importance,75,6,task4/tableau/d2_feature_importance.csv
+D2,d2_stability,20,8,task4/tableau/d2_stability.csv
+D3,d3_error_by_state,190,8,task4/tableau/d3_error_by_state.csv
+D3,d3_error_by_month,60,7,task4/tableau/d3_error_by_month.csv
+D3,d3_bias_by_temperature_band,70,7,task4/tableau/d3_bias_by_temperature_band.csv
+D3,d3_warning_performance,50,11,task4/tableau/d3_warning_performance.csv
+D4,d4_compute_log,22,5,task4/tableau/d4_compute_log.csv
+D4,d4_cv_parallelism,3,4,task4/tableau/d4_cv_parallelism.csv
+D4,d4_accuracy_vs_cost,4,7,task4/tableau/d4_accuracy_vs_cost.csv
+D4,d4_scaling,8,7,task4/tableau/d4_scaling.csv
