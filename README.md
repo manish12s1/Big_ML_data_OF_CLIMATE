@@ -14,7 +14,7 @@
 
 ### **Assessment**: Applied Core Assessment
 
-#### **Dataset**: NOAA Global Historical Climatology Network � Daily (GHCN-Daily), US stations, mirrored to Hugging Face as CatLikeIceCream/temperature
+#### **Dataset**: NOAA Global Historical Climatology Network – Daily (GHCN-Daily), US stations, mirrored to Hugging Face as CatLikeIceCream/temperature
 
 #### **Dataset Source**: Hugging Face
 
@@ -26,7 +26,7 @@ GHCN-Daily US stations, mirrored to Hugging Face as CatLikeIceCream/temperature.
 
 #### **GitHub repository URL**:  https://github.coventry.ac.uk/7006SCN-2627SEPNOV/sainim10_17142113.git
 
-#### Tableau Public URL:
+#### Tableau Public URL: https://public.tableau.com/app/profile/manish.saini8855/viz/7006SCNManishSaininext-dayTMAXforecasting/D1Dataqualitypipelinemonitoring
 
 
 
@@ -36,7 +36,7 @@ GHCN-Daily US stations, mirrored to Hugging Face as CatLikeIceCream/temperature.
 
 
 
-/\*\* overview here your Big Data problem \*\*/
+I forecast tomorrow's maximum temperature (TMAX, °C) at US weather stations, a regression problem that matters for heat warnings and energy planning. The data is NOAA GHCN-Daily (Pool ref 112): 17,097,453 rows × 35 columns in a 2.54 GiB CSV covering 1970–2023, processed in PySpark 4.2 on a 12-core laptop. Task 1 builds the data pipeline, Task 2 tunes and compares four Spark MLlib regressors, Task 3 tunes Spark and explains the models, and Task 4 tells the story in four Tableau dashboards.
 
 
 
@@ -52,17 +52,17 @@ This is a regression problem. I predict tomorrow's maximum temperature (°C) at 
 
 | **Dimension**    | **How your dataset demonstrates this dimension** | **Figure / table ref** |
 |------------------|--------------------------------------------------|------------------------|
-| Volume           | 17,097,453 rows; 2.54 GiB; 21 partitions after loading. | Fig. EP1, Table T1.3 |
-| Velocity         | Historical batch data; a full scan took 5.34 s on 12 cores. | Table T1.3 |
-| Variety          | 132 element codes; 31 wide day columns; mixed units. | Table T1.3 |
-| Veracity         | DAY1–28 are 14.16–14.60% empty and DAY31 50.29%; 0 duplicates; invalid values counted per element. | Fig. T1.1, Table T1.1 |
+| Volume           | 17,097,453 rows; 2.54 GiB; 21 partitions after loading. | Fig. EP1 |
+| Velocity         | Historical batch data; a full scan took 5.34 s on 12 cores. | task1.ipynb §5 |
+| Variety          | 132 element codes; 31 wide day columns; mixed units. | Fig. EP1; task1.ipynb §4 |
+| Veracity         | DAY1–28 are 14.16–14.60% empty and DAY31 50.29%; 0 duplicate rows. | Fig. T1.1; task1.ipynb §8 |
 | Value            | Tomorrow's TMAX has r = 0.935 with today's TMAX. | Table T1.2 |
-| **Licence**      | None on the mirror; NOAA data is public domain, cite Menne et al. (2012). | Task1.ipynb §1 |
-| **Ethical note** | No personal data; states with fewer stations may get higher errors. | Task1.ipynb §9.9 |
+| **Licence**      | None on the mirror; NOAA data is public domain, cite Menne et al. (2012). | task1.ipynb §1 |
+| **Ethical note** | No personal data; states with fewer stations may get higher errors. | Table 3.3b (Task 3) |
 
 *Which of the five V's dominate for this dataset, and why?*
 
-Volume and Veracity. Reshaping the full file was too big for my 16 GB laptop, so I kept 5% of stations. Gaps and error codes such as 32767 damage the lags and the target.
+Volume and Veracity. Reshaping the full file was too big for my 16 GB laptop, so I kept 5% of stations. Missing days (Fig. T1.1) break the lags and leave some targets empty.
 
 ### **1.3 Data Preparation and PySpark Pipeline**
 
@@ -78,18 +78,15 @@ Volume and Veracity. Reshaping the full file was too big for my 16 GB laptop, so
 
 *Why must the stages run in this order, and what would break if two were swapped?*
 
-VectorAssembler fails on nulls, so imputing comes first. The encoder needs the StringIndexer output and the scaler needs the assembled vector, so swapping any two stages breaks the pipeline. All stages are fitted on 1970–2015 only; the 2016–2023 test years are never used.
+VectorAssembler fails on nulls, so imputing comes first. The encoder needs the StringIndexer output and the scaler needs the assembled vector, so swapping either pair fails at fit time. All stages are fitted on 1970–2015 only; the 2016–2023 test years are never used.
 
 ### **EP1 Evidence Pack**
 *Paste one image, produced from a single notebook cell, showing in order: SparkSession initialisation, df.printSchema(), row and column count, file size verification, partition count after ingestion, and the fitted pipeline stage list.*
- ![SparkSession initialisation,](<figures/Screenshot 2026-10-18 001107.png>)
-  [PARTITION COUNT](<figures/Screenshot 2026-10-18 001230.png>)
-   ![rows count op](<figures/Screenshot 2026-10-18 001209-1.png>) 
- ![file size verfication o/p](<figures/Screenshot 2026-10-18 001222-1.png>)
- ![5 v,s](<figures/Screenshot 2026-10-18 001315.png>) 
-  ![Pipeline construction](<figures/Screenshot 2026-10-18 001348.png>) 
-   ![EP 1](<figures/Screenshot 2026-10-18 001336-1.png>)
-   ![EP1](<figures/Screenshot 2026-10-18 001358.png>) 
+
+![Fig. EP1: the single EP1 cell output](<figures/EP1_evidence_pack.png>)
+
+*Fig. EP1: one cell (task1.ipynb §11) prints, in order, the SparkSession, df.printSchema(), 17,097,453 rows × 35 columns, the 2.54 GiB file size, 21 partitions after ingestion and the five fitted pipeline stages.*
+
 **Task 1 Process Note**
 
 Writing bronze Parquet failed on Windows because HADOOP_HOME was unset. I installed winutils.exe and hadoop.dll, set HADOOP_HOME before starting Spark, and the 2.54 GiB CSV is now parsed only once. 
@@ -132,7 +129,7 @@ I tuned on a 10% sample (255,855 rows) with folds made from blocks of years, the
 | R² | 0.889 | 0.899 | 0.883 | 0.896 |
 | Adjusted R² / Explained variance | 0.889 / 0.889 | 0.899 / 0.899 | 0.883 / 0.883 | 0.896 / 0.896 |
 | Max error (°C) | 29.1 | 30.1 | 31.7 | 29.0 |
-| Inference time (s) | 1.71 | 10.11 | 3.13 | 3.29 |
+| Inference time (s) | 2.08 | 10.71 | 3.05 | 3.15 |
 
 All four beat the "tomorrow = today" baseline (RMSE 4.397). I use RMSE because big misses on very hot or cold days matter most. Random Forest is best, but GBT is only 1.6% worse, which is inside my 2% tie rule. GBT predicts three times faster, so I recommend GBT.
 
@@ -204,8 +201,26 @@ Repartitioning to 24 partitions made GBT retraining 22% slower: skew was only 1.
 
 
 
-/\*\* Please add here overview of Your Task4 \*\*/
+Notebook: [`notebooks/task4.ipynb`](notebooks/task4.ipynb) · Tableau data in `task4/tableau/` · results in `task4/results/` and `results/task4.json` · dashboard images in `task4/dashboards/`
 
+**Tableau Workbook (Public Link):** [7006SCN Manish Saini – next-day TMAX forecasting](https://public.tableau.com/app/profile/manish.saini8855/viz/7006SCNManishSaininext-dayTMAXforecasting/D1Dataqualitypipelinemonitoring)
 
+### **4.1 Dashboard Contact Sheet**
 
+![Figs. 4.1–4.4: the four Tableau dashboards](<task4/figures/task4_contact_sheet.png>)
 
+Figs. 4.1–4.4: D1 data quality & pipeline monitoring, D2 model performance & feature importance, D3 business insights, D4 scalability & cost. Each title states the finding; every model keeps one colour on all four dashboards (persistence grey); missing values are a year × feature heat map, error is a state map, and the warning chart plots hit rate against false alarms so the trigger trade-off is visible.
+
+### **4.2 Narrative Insights and Critical Reflection**
+
+| **#** | **Observation** | **Evidence (figure ref)** | **Decision it supports** |
+|---|---|---|---|
+| 1 | At a 35 °C trigger the models catch 50–58% of hot days (≥ 35 °C); persistence catches 71%. | Fig. 4.3: hit rates; forecasts 1.5–2.0 °C too cold at 35–40 °C | Trigger RF heat alerts at 33 °C: 79% caught, 38% false alarms. |
+| 2 | SNOW and SNWD missing rose from 9–12% (train) to 22–23% (test), yet all 8 checks passed. | Fig. 4.1: drift bars | Add a missing-share drift alert; refit the imputer on recent years. |
+| 3 | RF is most accurate (3.79 °C) and best under sensor noise, at a cost similar to GBT. | Figs. 4.2, 4.4 | Deploy RF as a nightly batch job; GBT's 0.9 s Task 2 tie-break win was noise. |
+
+Limitation: the 5% station sample leaves half the states with 1–3 test stations (top-ranked Florida has one), so the map compares stations, not states, and 2× day-to-day timing noise means Fig. 4.4 only separates cheap LR from the other three models. I would select models on event hit rates, not RMSE alone. Serving (Day 9) still needs drift monitoring and scheduled retraining, which I have not tested.
+
+**Task 4 Process Note**
+
+RMSE alone failed as the business measure: top-ranked RF missed 48% of ≥35 °C days at a 35 °C trigger. I added hit-rate tables per trigger and recommended 33 °C.

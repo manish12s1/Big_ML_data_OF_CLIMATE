@@ -15,7 +15,7 @@
     "results/task2.json",
     "results/task3.json"
   ],
-  "tableau_public_url": null,
+  "tableau_public_url": "https://public.tableau.com/app/profile/manish.saini8855/viz/7006SCNManishSaininext-dayTMAXforecasting/D1Dataqualitypipelinemonitoring",
   "dashboards": [
     {
       "id": "D1",
