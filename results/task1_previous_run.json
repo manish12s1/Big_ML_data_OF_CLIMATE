@@ -1,0 +1,99 @@
+{
+  "pool_reference": "<<POOL REF>>",
+  "student": {
+    "student_name": "<<YOUR FULL NAME>>",
+    "student_email": "<<YOUR UNIVERSITY E-MAIL>>",
+    "sid": "<<YOUR SID>>"
+  },
+  "dataset": {
+    "name": "climate.csv - GHCN-Daily US weather-station records (1970-2023)",
+    "source_url": "https://huggingface.co/datasets/CatLikeIceCream/temperature",
+    "original_source": "NOAA NCEI Global Historical Climatology Network - Daily (GHCN-Daily)",
+    "licence": "None declared on the Hugging Face mirror; original NOAA GHCN-Daily is US-Government public-domain data (citation of Menne et al. 2012 requested)",
+    "rows": 17097453,
+    "columns": 35,
+    "file_size_bytes": 2730667293,
+    "file_size_gib": 2.543,
+    "partitions_after_ingestion": 21
+  },
+  "big_data_requirements": {
+    "rows_ge_10M": true,
+    "cols_ge_10": true,
+    "size_ge_1GiB": true,
+    "not_kaggle": true,
+    "pipeline_in_pyspark": true
+  },
+  "problem": {
+    "type": "regression",
+    "target": "label_TMAX_next",
+    "target_meaning": "next-day maximum temperature at the same station (deg C)",
+    "train_years": "1970-2015",
+    "test_years": "2016-2023"
+  },
+  "cluster_config": {
+    "spark_version": "4.0.4",
+    "master": "local[*]",
+    "default_parallelism": 2,
+    "driver_memory": "6g",
+    "shuffle_partitions": 32,
+    "ansi_enabled": "true"
+  },
+  "quality": {
+    "completeness_pct": {
+      "min_day1_28": 14.16,
+      "max_day1_28": 14.6,
+      "day29": 19.78,
+      "day30": 21.53,
+      "day31": 50.29
+    },
+    "uniqueness": {
+      "duplicate_rows": 0
+    }
+  },
+  "station_day_rows": 57191149,
+  "features": [
+    "TMAX",
+    "TMIN",
+    "TOBS",
+    "PRCP",
+    "SNOW",
+    "SNWD",
+    "TMAX_lag1",
+    "TMAX_lag2",
+    "TMAX_roll7",
+    "TMIN_roll7",
+    "DTR",
+    "doy_sin",
+    "doy_cos",
+    "YEAR_f",
+    "state_code (one-hot)"
+  ],
+  "feature_target_correlation": {
+    "TMAX": 0.9335,
+    "TMIN": 0.8575,
+    "TOBS": 0.8838,
+    "PRCP": -0.02,
+    "SNOW": -0.2269,
+    "SNWD": -0.3069,
+    "TMAX_lag1": 0.8812,
+    "TMAX_lag2": 0.8555,
+    "TMAX_roll7": 0.9041,
+    "TMIN_roll7": 0.847,
+    "DTR": 0.3228,
+    "doy_sin": -0.2204,
+    "doy_cos": -0.7263,
+    "YEAR_f": 0.0116
+  },
+  "pipeline_stages": [
+    "ImputerModel",
+    "StringIndexerModel",
+    "OneHotEncoderModel",
+    "VectorAssembler",
+    "StandardScalerModel"
+  ],
+  "pipeline_stage_count": 5,
+  "timings_s": {
+    "full_scan_count_s": 9.72,
+    "pipeline_fit_s": 84.77
+  }
+}

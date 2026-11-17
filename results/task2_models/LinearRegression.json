@@ -1,0 +1,135 @@
+{
+  "family": "Linear / generalised linear",
+  "why_selected": "r=0.93 between today's TMAX and tomorrow's: the data's correlation structure is close to linear, so this is the interpretable baseline the trees must beat",
+  "param_grid": {
+    "regParam": [
+      0.0,
+      0.01,
+      0.1
+    ],
+    "elasticNetParam": [
+      0.0,
+      0.5,
+      1.0
+    ]
+  },
+  "grid_size": 9,
+  "cv_folds": 3,
+  "cv_tuning_rows": 255105,
+  "best_params": {
+    "regParam": 0.0,
+    "elasticNetParam": 0.0
+  },
+  "best_cv_rmse": 3.9057236836355362,
+  "cv_grid": [
+    {
+      "regParam": 0.0,
+      "elasticNetParam": 0.0,
+      "cv_rmse": 3.9057236836355362
+    },
+    {
+      "regParam": 0.0,
+      "elasticNetParam": 0.5,
+      "cv_rmse": 3.9057236836355362
+    },
+    {
+      "regParam": 0.0,
+      "elasticNetParam": 1.0,
+      "cv_rmse": 3.9057236836355362
+    },
+    {
+      "regParam": 0.01,
+      "elasticNetParam": 0.0,
+      "cv_rmse": 3.9061650204379426
+    },
+    {
+      "regParam": 0.01,
+      "elasticNetParam": 0.5,
+      "cv_rmse": 3.9098057937290815
+    },
+    {
+      "regParam": 0.01,
+      "elasticNetParam": 1.0,
+      "cv_rmse": 3.910734208433663
+    },
+    {
+      "regParam": 0.1,
+      "elasticNetParam": 0.0,
+      "cv_rmse": 3.9118766476263414
+    },
+    {
+      "regParam": 0.1,
+      "elasticNetParam": 0.5,
+      "cv_rmse": 3.936220696090009
+    },
+    {
+      "regParam": 0.1,
+      "elasticNetParam": 1.0,
+      "cv_rmse": 3.948190483379475
+    }
+  ],
+  "best_on_grid_edge": [
+    "regParam",
+    "elasticNetParam"
+  ],
+  "tuning_time_s": 164.94,
+  "training_time_s": 21.22,
+  "inference_time_s": 2.69,
+  "metrics": {
+    "RMSE": 3.9740475931158707,
+    "MAE": 2.9916848248683556,
+    "MSE": 15.793054272350044,
+    "R2": 0.8890610026401002,
+    "Adjusted_R2": 0.8890471906731587,
+    "Explained_Variance": 0.8890618810047037,
+    "Max_Error": 29.10060084013703,
+    "Median_AE": 2.313546693963781,
+    "P95_AE": 8.147784274709647,
+    "MAPE_pct_abs_y_ge_1C": 34.340692635773664,
+    "MAPE_excluded_row_frac": 0.023813475707027396
+  },
+  "importance_kind": "abs(coefficients)",
+  "top_features": [
+    {
+      "feature": "state_code_vec_33",
+      "importance": 1223.778741
+    },
+    {
+      "feature": "state_code_vec_42",
+      "importance": 799.518664
+    },
+    {
+      "feature": "state_code_vec_21",
+      "importance": 689.235042
+    },
+    {
+      "feature": "state_code_vec_36",
+      "importance": 654.178308
+    },
+    {
+      "feature": "state_code_vec_30",
+      "importance": 598.269787
+    },
+    {
+      "feature": "state_code_vec_31",
+      "importance": 575.681054
+    },
+    {
+      "feature": "state_code_vec_24",
+      "importance": 564.014637
+    },
+    {
+      "feature": "state_code_vec_39",
+      "importance": 558.116333
+    },
+    {
+      "feature": "state_code_vec_32",
+      "importance": 552.460651
+    },
+    {
+      "feature": "state_code_vec_11",
+      "importance": 550.687035
+    }
+  ],
+  "executor_config": "local[*], 12 cores, driver 4g, shuffle 32, CV parallelism 2"
+}
